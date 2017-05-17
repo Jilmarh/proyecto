@@ -397,7 +397,7 @@ table a, #comments a{background-color:inherit;}
 	.font-x3{font-size:1.6rem;}
 }
 .formulario1{
-	background: white;
+	background: DimGray;
 	color:#A3D044;
 	position: fixed;
 	top: 60px;
@@ -405,6 +405,7 @@ table a, #comments a{background-color:inherit;}
     width: 40vw;
     transition: all .5s;
 	z-index: 100;
+	padding: 30px;
 	opacity: 1;
 	box-shadow: 0px 3px 2px #333
 }

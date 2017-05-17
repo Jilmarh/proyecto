@@ -20,8 +20,13 @@
         <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
-        <li><a href="#" id="registro">registrateeee</a></li>
-
+        <li><a href="#">USUARIOS</a></li>
+        {{#if currentUser}}
+           <li><a href="#" id="logout">logueado {{username}}</a></li>
+        {{else}}
+          <li><a href="#" id="registro">Registro</a></li>
+        {{/if}}
+        
       </ul>
     </div>
     <div class="fl_right">
@@ -41,8 +46,8 @@
   <header id="header" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <div id="logo" class="fl_left">
-      <h1><a href="mainpage.html">Nodelle</a></h1>
-      <p>Congue pulvinar velit</p>
+      <h1><a href="mainpage.html">Edu Blog</a></h1>
+      <p>Informacion a tu alcance</p>
     </div>
     <!-- ################################################################################################ -->
     <nav id="mainav" class="fl_right" >
