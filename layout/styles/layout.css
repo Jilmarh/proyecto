@@ -285,7 +285,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#A3D044;}
 #footer .linklist li{border-color:#414141;}
 
 
-/* Navigation */
+/* Navigation */ 
 #mainav li a{color:inherit;}
 #mainav .active a, #mainav a:hover, #mainav li:hover > a{color:#A3D044; background-color:inherit;}
 #mainav li li a, #mainav .active li a{color:#FFFFFF; background-color:rgba(0,0,0,.6); border-color:rgba(0,0,0,.6);}
@@ -408,3 +408,4 @@ table a, #comments a{background-color:inherit;}
 	opacity: 1;
 	box-shadow: 0px 3px 2px #333
 }
+
