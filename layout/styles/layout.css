@@ -141,9 +141,7 @@ nav ul, nav ol{margin:0; padding:0; list-style:none;}
 /* Top Navigation */
 #mainav{ 
 	border:0px solid; 
-	width: 700px;
-	float: right;
-	width:400px;
+	width: 600px;
 }
 #mainav ul.clear{margin-top:3px;}
 #mainav ul{text-transform:uppercase;}
