@@ -416,3 +416,20 @@ nav{
 	background-color: inherit;
 	float: left;	
 }
+.container{
+     border-color: 5px solid;
+}
+.chatform{
+	color:#000;
+}
+#client{
+	background-color:#fff;
+	color:#000;
+}
+.card-panel{
+	margin-top:0px;
+	margin-bottom:0px;
+}
+#users_list{
+	cursor: pointer;
+}

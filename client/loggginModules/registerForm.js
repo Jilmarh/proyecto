@@ -12,7 +12,7 @@ Template.registerForm.events({
       	"email" : e.target.email.value,
       	"password" : e.target.password.value,
       	"profile" : {
-           "country" : e.target.country.value
+           "nivel" : e.target.nivel.value
       	   }
         };
         /*
