@@ -25,10 +25,6 @@ twbs:bootstrap
 kadira:flow-router
 accounts-ui
 accounts-password
-<<<<<<< HEAD
-aldeed:collection2
-dburles:collection-helpers
-=======
 alanning:roles
 aldeed:collection2
->>>>>>> 7ff55151a1ce353319a94a2713b488c50075f23b
+
