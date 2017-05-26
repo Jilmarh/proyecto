@@ -1,7 +1,7 @@
 <template name="registerForm">
 <div class="row"> 
     <div class="col s11">
-      <a href="">registro</a>
+      <a href=""><h3>registro</h3></a>
     </div>
     <div class="col s1">
       <a href="" id="close">X</a>
@@ -14,25 +14,25 @@
             <div class="form-group">
                <label class="control-label" form="">username</label>
                <span class="help-block"></span>
-               <input type="text" class="form-control" id="" placeholder="username">
+               <input type="text" class="form-control" name="username" id="" placeholder="username">
             </div>  
         </div>
         <div class="col s6"> 
            <div class="form-group">
                <label class="control-label" form="">email</label>
                <span class="help-block"></span>
-               <input type="text" class="form-control" id="" placeholder="email">
+               <input type="text" class="form-control" name="email" id="" placeholder="email">
             </div>     
         </div>       
        </div> 
        <div class="row">
        	  <div class="col s6"> 
            <div class="form-group">
-               <label class="control-label" form="">pais</label>
-               <select>
-               	 <option value="bolivia">bolivia</option>
-               	 <option value="chile">chile</option>
-               	 <option value="peru">peru</option>
+               <label class="control-label" form="">tipo</label>
+               <select name="nivel">
+               	 <option value="administrador">administrador</option>
+               	 <option value="profesor">profesor</option>
+               	 <option value="estudiante">estudiante</option>
                </select>
             </div>     
           </div> 
@@ -42,7 +42,7 @@
            <div class="form-group">
                <label class="control-label" form="">password</label>
                <span class="help-block"></span>
-               <input type="password" class="form-control" id="" placeholder="password">
+               <input type="password" class="form-control" name="password" id="" placeholder="password">
             </div>     
         </div>  
        </div>
@@ -51,7 +51,7 @@
            <div class="form-group">
                <label class="control-label" form="">repasword</label>
                <span class="help-block"></span>
-               <input type="text" class="form-control" id="" placeholder="repasword">
+               <input type="text" class="form-control" name="repasword" id="" placeholder="repasword">
             </div>     
         </div>  
        </div>

@@ -26,3 +26,5 @@ twbs:bootstrap
 kadira:flow-router
 accounts-ui
 accounts-password
+aldeed:collection2
+dburles:collection-helpers

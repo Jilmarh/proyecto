@@ -139,7 +139,10 @@ nav ul, nav ol{margin:0; padding:0; list-style:none;}
 #mainav .drop::after, #mainav li li .drop::after, #breadcrumb li a::after, .sidebar nav a::after{position:absolute; font-family:"FontAwesome"; font-size:10px; line-height:10px;}
 
 /* Top Navigation */
-#mainav{}
+#mainav{ 
+	border:0px solid; 
+	width: 600px;
+}
 #mainav ul.clear{margin-top:3px;}
 #mainav ul{text-transform:uppercase;}
 #mainav ul ul{z-index:9999; position:absolute; width:180px; text-transform:none;}
@@ -397,7 +400,7 @@ table a, #comments a{background-color:inherit;}
 	.font-x3{font-size:1.6rem;}
 }
 .formulario1{
-	background: white;
+	background: DimGray;
 	color:#A3D044;
 	position: fixed;
 	top: 60px;
@@ -405,7 +408,28 @@ table a, #comments a{background-color:inherit;}
     width: 40vw;
     transition: all .5s;
 	z-index: 100;
+	padding: 30px;
 	opacity: 1;
 	box-shadow: 0px 3px 2px #333
 }
-
+nav{
+	background-color: inherit;
+	float: left;	
+}
+.container{
+     border-color: 5px solid;
+}
+.chatform{
+	color:#000;
+}
+#client{
+	background-color:#fff;
+	color:#000;
+}
+.card-panel{
+	margin-top:0px;
+	margin-bottom:0px;
+}
+#users_list{
+	cursor: pointer;
+}

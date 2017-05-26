@@ -1,0 +1,13 @@
+<template name="soporteTemplate" >
+{{>banner}}
+  {{#if currentUser}}
+  	{{#if isInRole "soporte" "profesor"}}
+  	   {{>templateSupport}}
+    {{else}}
+        {{>templateClient}}
+    {{/if}}   
+  {{else}}
+		<h1>para hacer uso del chat debe crear una cuenta previa</h1>
+  {{/if}}
+
+</template>
