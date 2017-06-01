@@ -1,0 +1,36 @@
+<template name="sistemaBaneo">
+	{{>banner}}
+	<div class="btn-group">
+                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Admin_{{username}}<span class="caret"></span>
+                          </button>
+                           <ul class="dropdown-menu">
+                              <li><a href="/"><span class="glyphicon glyphicon-user"></span>Perfil</a></li>
+                              <li><a href="#!"><span class="glyphicon glyphicon-envelope"></span>Notificaciones</a></li>
+                              <li><a href="/sistemaBaneo"><span class="glyphicon glyphicon-screenshot"></span>Sistema de baneo</a></li>
+                              <li><a href="/"><span class="glyphicon glyphicon-education"></span>Ver Cursos</a></li>
+                              <li><a href="/"><span class="glyphicon glyphicon-user"></span>Usuarios</a></li>
+                            </ul>
+                      </div>
+     <div class="wrapper row1">
+  <header id="header" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div id="logo" class="fl_left">
+      <h1><a href="index.html">Edu .Bloc</a></h1>
+      <p>Educacion en linea</p>
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+  </header>
+</div>
+	<div class="row">
+		<div class="col s12 m5">
+			<div class="card-panel teal">
+				<span class="white-text">
+				  {{>Template.dynamic template=sistemaBaneo}}
+				</span>
+			</div>
+		</div>
+	</div>
+
+
+</template>

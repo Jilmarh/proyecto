@@ -1,71 +1,139 @@
 <template name="registerForm">
-<div class="row"> 
-    <div class="col s11">
-      <a href=""><h3>registro</h3></a>
-    </div>
-    <div class="col s1">
-      <a href="" id="close">X</a>
-    </div>
-  </div>
-    <div class="row">
-      <form action="" method="post">
-       <div class="row">
-        <div class="col s6">
-            <div class="form-group">
-               <label class="control-label" form="">username</label>
-               <span class="help-block"></span>
-               <input type="text" class="form-control" name="username" id="" placeholder="username">
-            </div>  
+  <div class="container">
+        <div class="row centered-form">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+                <div><a href="" id="close">X</a></div>
+              <h3 class="panel-title">Bienvenido Por Favor Registrate</h3>
+            </div>
+            <div class="panel-body">
+              <form role="form" method="POST">
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                            <label class="control-label" for="">Nombre</label>
+                            <span class="help-block"></span>
+                            <input type="text" class="form-control" name="username" id="" placeholder="username">
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <label class="control-label" for="">Apellido</label>
+                            <span class="help-block"></span>
+                            <input type="text" class="form-control" name="lastname" id="" placeholder="lastname">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="control-label" for="">email</label>
+                        <span class="help-block"></span>
+                        <input type="text" name="email" class="form-control" id="" placeholder="Email">
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                      <label class="control-label" for="">Password</label>
+                              <span class="help-block"></span>
+                              <input type="password" name="password" class="form-control" id="" placeholder="password">
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label" for="">Repassword</label>
+                              <span class="help-block"></span>
+                              <input type="password" name="repassword" class="form-control" id="" placeholder="re. password">
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <div class="input-field"> 
+                            <div class="form-group">
+                              <select name="tipodeusuario">
+                                <option value="Profesor">Profesor</option>
+                                <option value="Estudiante">Estudiante</option>
+                              </select>
+                              </div>
+                            </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <div class="input-field"> 
+                            <div class="form-group">
+                              <label class="right" for="">Pais</label>
+                              <select name="country">
+                                 <option value="AF">Afganistán</option>
+                                  <option value="AL">Albania</option>
+                                  <option value="DE">Alemania</option>
+                                  <option value="AD">Andorra</option>
+                                  <option value="AO">Angola</option>
+                                  <option value="AI">Anguilla</option>
+                                  <option value="AQ">Antártida</option>
+                                  <option value="AG">Antigua y Barbuda</option>
+                                  <option value="AN">Antillas Holandesas</option>
+                                  <option value="SA">Arabia Saudí</option>
+                                  <option value="DZ">Argelia</option>
+                                  <option value="AR">Argentina</option>
+                                  <option value="AM">Armenia</option>
+                                  <option value="AW">Aruba</option>
+                                  <option value="AU">Australia</option>
+                                  <option value="AT">Austria</option>
+                                  <option value="AZ">Azerbaiyán</option>
+                                  <option value="BS">Bahamas</option>
+                                  <option value="BH">Bahrein</option>
+                                  <option value="BD">Bangladesh</option>
+                                  <option value="BB">Barbados</option>
+                                  <option value="BE">Bélgica</option>
+                                  <option value="BZ">Belice</option>
+                                  <option value="BJ">Benin</option>
+                                  <option value="BM">Bermudas</option>
+                                  <option value="BY">Bielorrusia</option>
+                                  <option value="MM">Birmania</option>
+                                  <option value="BO">Bolivia</option>
+                                  <option value="BA">Bosnia y Herzegovina</option>
+                                  <option value="BW">Botswana</option>
+                                  <option value="BR">Brasil</option>
+                                  <option value="BN">Brunei</option>
+                                  <option value="BG">Bulgaria</option>
+                                  <option value="BF">Burkina Faso</option>
+                                  <option value="BI">Burundi</option>
+                                  <option value="BT">Bután</option>
+                                  <option value="CV">Cabo Verde</option>
+                                  <option value="KH">Camboya</option>
+                                  <option value="CM">Camerún</option>
+                                  <option value="CA">Canadá</option>
+                                  <option value="TD">Chad</option>
+                                  <option value="CL">Chile</option>
+                                  <option value="CN">China</option>
+                                  <option value="CY">Chipre</option>
+                                  <option value="VA">Ciudad del Vaticano (Santa Sede)</option>
+                                  <option value="CO">Colombia</option>
+                                  <option value="KM">Comores</option>
+                                  <option value="CG">Congo</option>
+                                  <option value="CD">Congo, República Democrática del</option>
+                                  <option value="KR">Corea</option>
+                                  </select>
+                              </div>
+                            </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                      <button type="submit" class="btn">Crear cuenta</button>
+                    </div>
+                    <div class="form-group">
+                      <button type="submit" class="btn" id="return">Volver a login</button>
+                    </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-        <div class="col s6"> 
-           <div class="form-group">
-               <label class="control-label" form="">email</label>
-               <span class="help-block"></span>
-               <input type="text" class="form-control" name="email" id="" placeholder="email">
-            </div>     
-        </div>       
-       </div> 
-       <div class="row">
-       	  <div class="col s6"> 
-           <div class="form-group">
-               <label class="control-label" form="">tipo</label>
-               <select name="nivel">
-               	 <option value="administrador">administrador</option>
-               	 <option value="profesor">profesor</option>
-               	 <option value="estudiante">estudiante</option>
-               </select>
-            </div>     
-          </div> 
-       </div>
-       <div>
-       	 <div class="col s6"> 
-           <div class="form-group">
-               <label class="control-label" form="">password</label>
-               <span class="help-block"></span>
-               <input type="password" class="form-control" name="password" id="" placeholder="password">
-            </div>     
-        </div>  
-       </div>
-       <div>
-       	<div class="col s6"> 
-           <div class="form-group">
-               <label class="control-label" form="">repasword</label>
-               <span class="help-block"></span>
-               <input type="text" class="form-control" name="repasword" id="" placeholder="repasword">
-            </div>     
-        </div>  
-       </div>
-       <div class="row">
-          <div class="col s4">
-          <button type="submit" class="btn">crear cuenta</button>
-          </div>
-          <div class="col s4">
-          </div>
-          <div class="col s4">
-          <button type="submit" id="return" class="btn">volver</button>
-          </div>
-       </div>   
-     </form>
-    </div>    
-	
+      </div>
+    </div>
 </template>

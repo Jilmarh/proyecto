@@ -1,81 +1,84 @@
 <template name="templateClient">
-	{{#if conectado}}
-	   {{>templateFormchat}}
-	{{else}}   
-	  {{>connect_template}}
-	{{/if}}  
-</template>
-<template name="connect_template">
-	<button type="button" class="waves-effect waves-light btn-large">
-		<i class="mdi-file-cloud right"></i>conectarse
-	</button>
-</template>
-<template name="templateFormchat">
-	<div class="row">
-		<div class="col s12"> 
-			<div class="row">
-				<div class="col s12 chat">
-					<div class="row">
-						<div class="row">
-							<div class="col s10">
-								<div class="card-panel teal">
-									<span class="white-text"><B>tomas></B> I am a very simple card. I am good at containing small bits of information.
-										I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-									</span>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col s2">
-								
-							</div>
-							<div class="col s10">
-								<div class="card-panel deep-purple darken-1">
-									<span class="white-text"><B>Ditmar></B> I am a very simple card. I am good at containing small bits of information.
-										I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-									</span>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col s10">
-								<div class="card-panel teal">
-									<span class="white-text"><B>tomas></B> I am a very simple card. I am good at containing small bits of information.
-										I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-									</span>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col s10">
-								<div class="card-panel teal">
-									<span class="white-text"><B>tomas></B> I am a very simple card. I am good at containing small bits of information.
-										I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-									</span>
-								</div>
-							</div>
-						</div>
-
-					</div>	
-				</div>
-				<div class="col s12">
-					<form action="" method="POST" class="chatform">
-						<div class="input-field"> 
-							<div class="form-group">
-								
-								<span class="help-block"></span>
-								<input type="text" class="form-control" id="" placeholder="Messages">
-							</div>
-						</div>	
-					</form>
-				</div>
+	<div style="background-color:#F7F7F7">
+		<div class="wrap">
+			{{>banner}}
+			<div class="wrapper row1">
+			  <header id="header" class="hoc clear"> 
+			    <!-- ################################################################################################ -->
+			    <div id="logo" class="fl_left">
+			      <h1><a href="index.html">Edu .Bloc</a></h1>
+			      <p>Educacion en linea</p>
+			    </div>
+			    <!-- ################################################################################################ -->
+			    
+			  </header>
 			</div>
-			
-		</div>
-	</div>
-	<div class="row">
-		<div class="col s6">
-			<button type="button" class="waves-effect waves-light btn-large"><i class="mdi-file-cloud right"></i>Desconectar</button>
-		</div>
+			<html>
+				<head lang="en">
+				    <meta charset="UTF-8">
+				    <title>Menus</title>
+
+				    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+				    <link href="demo.css" rel="stylesheet">
+				    <link href="demo.js" rel="script">
+
+				</head>
+				<body>
+
+				<nav class="navbar navbar-inverse sidebar" role="navigation">
+				    <div class="container-fluid">
+				        <!-- Brand and toggle get grouped for better mobile display -->
+				        <div class="navbar-header">
+				            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+				                <span class="sr-only">Toggle navigation</span>
+				                <span class="icon-bar"></span>
+				                <span class="icon-bar"></span>
+				                <span class="icon-bar"></span>
+				            </button>
+				            <a class="navbar-brand" href="#">Brand</a>
+				        </div>
+				        <!-- Collect the nav links, forms, and other content for toggling -->
+				        <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+				            <ul class="nav navbar-nav">
+				                <li class="active"><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+				                <li ><a href="#">Profile<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
+				                <li ><a href="#">Messages<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+				                <li class="dropdown">
+				                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
+				                    <ul class="dropdown-menu forAnimate" role="menu">
+				                        <li><a href="#">Action</a></li>
+				                        <li><a href="#">Another action</a></li>
+				                        <li><a href="#">Something else here</a></li>
+				                        <li class="divider"></li>
+				                        <li><a href="#">Separated link</a></li>
+				                        <li class="divider"></li>
+				                        <li><a href="#">One more separated link</a></li>
+				                    </ul>
+				                </li>
+				                <li><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+				                <li ><a href="#">Profile<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
+				                <li ><a href="#">Messages<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+				                <li class="dropdown">
+				                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
+				                    <ul class="dropdown-menu forAnimate" role="menu">
+				                        <li><a href="#">Action</a></li>
+				                        <li><a href="#">Another action</a></li>
+				                        <li><a href="#">Something else here</a></li>
+				                        <li class="divider"></li>
+				                        <li><a href="#">Separated link</a></li>
+				                        <li class="divider"></li>
+				                        <li><a href="#">One more separated link</a></li>
+				                    </ul>
+				                </li>
+				            </ul>
+				        </div>
+				    </div>
+				</nav>
+				<div class="main">
+				    <!-- Content Here -->
+				</div>
+				</body>
+				</html>
+   		</div>
 	</div>
 </template>

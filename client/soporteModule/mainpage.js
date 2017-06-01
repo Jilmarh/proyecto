@@ -1,4 +1,4 @@
-Template.banner.helpers({
+Template.mainpage.helpers({
 	username : function(){
 		return Accounts.user().username;
 	}

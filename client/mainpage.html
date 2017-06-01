@@ -6,20 +6,34 @@
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body id="top">
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
 <div class="row">
  {{>mainModuleLoggin}}
-</div >
+</div>
   {{>Template.dynamic template=banner}}
-
-
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-
-
+  {{#if  currentUser}}
+      {{#if  isInRole 'soporte' 'admin'}}
+                      <div class="btn-group">
+                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Admin_{{username}}<span class="caret"></span>
+                          </button>
+                           <ul class="dropdown-menu">
+                              <li><a href="#!"><span class="glyphicon glyphicon-envelope"></span>Notificaciones</a></li>
+                              <li><a href="/sistemaBaneo"><span class="glyphicon glyphicon-screenshot"></span>Sistema de baneo</a></li>
+                              <li><a href="/"><span class="glyphicon glyphicon-education"></span>Ver Cursos</a></li>
+                              <li><a href="/"><span class="glyphicon glyphicon-user"></span>Usuarios</a></li>
+                            </ul>
+                      </div>
+          {{#if isInRole 'soporte' 'profesor'}}
+                     <li><a class="glyphicon glyphicon-menu-down" href="#">.ADMINISTRAR_CURSOS</a>
+                      <ul>
+                        <li><a href="/cursos">CURSOS</a></li>
+                        <li><a href="/admicurso">NUEVO CURSO</a></li>
+                        <li><a href="">DAR DE BAJA</a></li>
+                        <li><a href="">OTROS</a></li>
+                      </ul>
+                    </li>
+          {{/if}} 
+      {{/if}}    
+  {{/if}}
  <div class="wrapper row1">
   <header id="header" class="hoc clear"> 
     <!-- ################################################################################################ -->
@@ -28,119 +42,62 @@
       <p>Educacion en linea</p>
     </div>
     <!-- ################################################################################################ -->
-    <nav id="mainav" class="fl_right">
-      <ul class="clear">  
-        <li><a class="glyphicon glyphicon-menu-down" href="#">.cursos</a>
-          <ul>
-            <li><a href="">Operador basico de PC</a></li>
-            <li><a href="/cursos">Desarrollo web</a></li>
-            <li><a href="">Php web services</a></li>
-            <li><a href="">Otros</a></li>
-          </ul>
-        </li>
-            {{#if  currentUser}}
-                {{#if isInRole 'soporte' 'profesor'}}
-                     <li><a class="glyphicon glyphicon-menu-down" href="#">.ADMINISTRAR_CURSOS</a>
-                      <ul>
-                        <li><a href="/cursos">CURSOS</a></li>
-                        <li><a href="/admicurso">NUEVO CURSO</a></li>
-                        <li><a href="">DAR DE BAJA</a></li>
-                        <li><a href="">OTROS</a></li>
-                      </ul>
-                    </li> 
-                {{/if}}    
-              {{/if}}  
-        </ul>
-    </nav>
-    <!-- ################################################################################################ -->
+    
   </header>
 </div>
-
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-
-
-
-
-
-<div class="wrapper bgded overlay" style="background-image:url('/images/demo/backgrounds/uno.jpg');">
-  <div id="pageintro" class="hoc clear"> 
-    <!-- ################################################################################################ -->
-    <article>
-      <div>
-        <p class="heading">bienvenidos</p>
-          <p class="heading">¿ESTAS LISTO PARA CAMBIAR TU VIDA?</p>
-          <h2 class="heading">Plataforma Virtual Edu.Blog</h2>
-      </div>
-      <footer>
-        <ul class="nospace inline pushright">
-          <li><a class="btn" href="#">VAMOS POR MAS</a></li>
-        </ul>
-      </footer>
-    </article>
-    <!-- ################################################################################################ -->
-  </div>
-</div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
 <div class="container">
   {{>Template.dynamic template=content}}
 </div>  
-
-
-<div class="wrapper row2">
-   <div class="hoc container clear"> 
-    <!--################################################################################################-->
-    <ul class="nospace group cta">
-      <li class="one_third first">
-        <article><strong class="numb">01</strong>
-          <h6 class="heading font-x1"><a href="#">Vulputate ullamcorper</a></h6>
-          <p>Rutrum elit nec tincidunt sed aenean aliquet mauris accumsan eget dui id&hellip;</p>
-        </article>
-      </li>
-      <li class="one_third">
-        <article><strong class="numb">02</strong>
-          <h6 class="heading font-x1"><a href="#">Lobortis condimentum</a></h6>
-          <p>Dolor eu suscipit facilisis vestibulum vitae semper nisl vivamus a ligula&hellip;</p>
-        </article>
-      </li>
-      <li class="one_third">
-        <article><strong class="numb">03</strong>
-          <h6 class="heading font-x1"><a href="#">Malesuada hendrerit</a></h6>
-          <p>Nulla ut imperdiet metus aliquam iaculis mi in tortor accumsan at lobortis&hellip;</p>
-        </article>
-      </li>
-    </ul>
-    <!--################################################################################################--> 
-  </div>
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="sectiontitle">
+      <h6 class="heading">Imperdiet vivamus</h6>
+      <p>Scelerisque arcu et interdum vulputate purus nisl.</p>
+    </div>
+    <div class="group">
+      <div class="one_half first">
+        <p>Fringilla sapien quis sollicitudin dui mauris et dui sed eget lectus vitae augue feugiat elementum sed luctus.</p>
+        <p class="btmspace-50">Integer sodales odio a ultrices feugiat ligula augue tempor orci ullamcorper mattis erat pede at magna aliquam nisl etiam congue quisque vel ante quis massa tristique.</p>
+        <ul class="nospace group">
+          <li class="one_half first">
+            <article><a href="#"><i class="glyphicon glyphicon-phone-alt" style = "font-size: 100px"></i></a>
+              <h6 class="heading font-x1">Iaculis nam nulla</h6>
+              <p>Lacinia quis ornare a eros aliquam leo curabitur pretium enim et mauris duis elit&hellip;</p>
+            </article>
+          </li>
+          <li class="one_half">
+            <article><a href="#"><i class="glyphicon glyphicon-education" style = "font-size: 100px"></i></a>
+              <h6 class="heading font-x1">Augue faucibus nec</h6>
+              <p>Fusce malesuada neque non odio class aptent taciti sociosqu ad litora torquent per&hellip;</p>
+            </article>
+          </li>
+        </ul>
+      </div>
+      <div class="one_half"><img class="inspace-10 borderedbox" src="images/demo/foto.jpg" alt=""></div>
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
 </div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-
 
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper bgded overlay" style="background-image:url('images/demo/fond.jpg');">
-
   <article class="hoc container clear center"> 
     <!-- ################################################################################################ -->
-    <h2 class="font-x3">Comenzar</h2>
-    <p class="btmspace-50">Estamos conectando a millones de estudiantes, educadores y empleadores en todo el mundo.</p>
-    <p class="nospace"><a class="btn medium" href="#">INICIAR &raquo;</a></p>
+    <h2 class="font-x3">Parturient montes</h2>
+    <p class="btmspace-50">Ridiculus mus sed pretium erat quis eros imperdiet nec suscipit diam venenatis ut a ipsum pulvinar tincidunt&hellip;</p>
+    <p class="nospace"><a class="btn medium" href="#">Read More &raquo;</a></p>
     <!-- ################################################################################################ -->
   </article>
 </div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
 <div class="wrapper row4">
   <footer id="footer" class="hoc clear"> 
     <!-- ################################################################################################ -->
@@ -157,39 +114,6 @@
         <li><a href="https://www.skype.com/es/" target="_blank"><img alt="sígueme en Skype" height="48" src="http://1.bp.blogspot.com/-INuV6Ck3_HI/UiX1AHxGARI/AAAAAAAAB2A/VMz64Y6IW7s/s1600/Skype.png" title="sígueme en Skype" width="48" /></a></li>
       </ul>
     </div>
-    <div class="one_third">
-      <h6 class="title">Contactate con Nosotros</h6>
-      <ul class="nospace linklist contact">
-        <li><i class="fa fa-map-marker"></i>
-          <address>
-             Avenida Periferica # 17
-          </address>
-        </li>
-        <li><i class="fa fa-phone"></i> +(591) 65490772</li>
-        <li><i class="fa fa-fax"></i> +00 (591) 79438307</li>
-        <li><i class="fa fa-envelope-o"></i> edu.blog@gmail.com</li>
-      </ul>
-    </div>
-    <div class="one_third">
-      <h6 class="title">Justo efficitur ultrices</h6>
-      <ul class="nospace linklist">
-        <li>
-          <article>
-            <h2 class="nospace font-x1"><a href="#">Vel diam neque nunc</a></h2>
-            <time class="font-xs block btmspace-10" datetime="2045-04-06">Friday, 6<sup>th</sup> April 2045</time>
-            <p class="nospace">Vitae feugiat nisi eget magna at arcu viverra posuere donec aliquam&hellip;</p>
-          </article>
-        </li>
-        <li>
-          <article>
-            <h2 class="nospace font-x1"><a href="#">Quis hendrerit libero</a></h2>
-            <time class="font-xs block btmspace-10" datetime="2045-04-05">Thirsday, 5<sup>th</sup> April 2045</time>
-            <p class="nospace">Cras auctor metus vel augue gravida ultrices maecenas consectetur&hellip;</p>
-          </article>
-        </li>
-      </ul>
-    </div>
-    <!-- ################################################################################################ -->
   </footer>
 </div>
 <!-- ################################################################################################ -->
@@ -198,7 +122,6 @@
 <div class="wrapper row5">
   <div id="copyright" class="hoc clear"> 
     <!-- ################################################################################################ -->
-
     <p class="fl_left">SEMINARIO &copy; 2017 - Derechos Reservados - <a href="#">Domain Name</a></p>
     <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
     <!-- ################################################################################################ -->

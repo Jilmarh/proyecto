@@ -3,21 +3,11 @@ Template.logginForm.events ({
 		e.preventDefault();
 		myTemplates.set("registerForm");
 	},
-	"click #close" : function(e){
-        e.preventDefault();
-        $(".formulario1").css("opacity",0);
-	},
-	"submit form" : function(e){
-
-		Meteor.loginWithPassword(e.target.email.value,e.target.password.value);
-		$(".formulario1").css("opacity",0);
-		return false;
-	}
-});
-Template.mainpage.events ({
-    "click #registro" : function (e){
+	"submit form" :function(e){
 		e.preventDefault();
-		$(".formulario1").css("opacity",1);
+		Meteor.loginWithPassword(e.target.email.value,e.target.password.value);
+		FlowRouter.go('/soporte');
+		$('#modal-id').modal('hide');	
+		return false;			
 	}
 });
- 
