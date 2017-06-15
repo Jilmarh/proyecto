@@ -1,0 +1,41 @@
+<template name="banner2">
+	<div class="wrapper row0">
+  <div id="topbar" class="hoc clear"> 
+    <nav id="mainav" class="hoc clear">
+    <ul class="clear">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">soporte</a></li>
+        <li><a class="drop" href="#">Cursos</a>
+        <ul>
+            <li><a href="">Operador basico de PC</a></li>
+            <li><a href="/cursos">Desarrollo web</a></li>
+            <li><a href="">Php web services</a></li>
+            <li><a href="">Otros</a></li> 
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  {{#if currentUser}}
+          <div class="btn-group">
+                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">{{username}}
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                      <li><a href="/"><span class="glyphicon glyphicon-user"></span>Perfil</a></li>
+                      <li><a href="#!"><span class="glyphicon glyphicon-envelope"></span>Notificaciones</a></li>
+                      <li><a href="" id="logout"><span class="glyphicon glyphicon-off"></span>Cerrar sesion</a></li>
+                  </ul>
+          </div>
+  {{else}}
+    <a class="btn btn-primary" data-toggle="modal" href='#modal-id'>Login</a>
+  {{/if}}        
+    <div class="fl_right">
+      <ul class="nospace">
+        <li><i class="glyphicon glyphicon-earphone"></i> +591 79438307</li>
+        <li><i class="glyphicon glyphicon-envelope"></i> info@domain.com</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</template>

@@ -1,8 +1,22 @@
 <template name="cursos">
-<div style="background-color:#F7F7F7">
+{{>banner}}
+  <div class="wrapper row1">
+  <header id="header" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div id="logo" class="fl_left">
+      <h1><a href="index.html">Edu .Bloc</a></h1>
+      <p>Educacion en linea</p>
+    </div>
+    <!-- ################################################################################################ -->
+    
+  </header>
+</div>
+  <div class="row affix-row">
+    {{>menuEs}}
+  <div class="col-sm-9 col-md-10 affix-content">
     <div class="wrap">
-    {{>banner}}
-      <main class="hoc container clear"> 
+        <div class="container">
+    <main class="hoc container clear"> 
         <!-- main body -->
         <!-- ############################################################################################### -->
         <ul class="nospace group services">
@@ -61,5 +75,7 @@
         <div class="clear"></div>
       </main>
     </div>
+    </div>
   </div>
+</div>
 </template>

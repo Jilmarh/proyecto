@@ -1,10 +1,10 @@
 <template name="soporte" >
 {{#if currentUser}}
 		{{#if isInRole 'soporte' 'profesor'}}
-			{{>templateSupport}}
+			{{>templateProfesor}}
 		{{else}}
 			{{#if isInRole 'soporte' 'estudiante'}}
-				{{>templateClient}}
+				{{>templateEstudiante}}
 			{{else}}
 				{{#if isInRole 'soporte' 'admin'}}
 					{{>templateSupport}}

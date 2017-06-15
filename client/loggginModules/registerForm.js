@@ -14,12 +14,14 @@ Template.registerForm.events({
             "country" : e.target.country.value
       }
     };
+    $('#modal-id').modal('hide');
     Accounts.createUser(user,function(e){
       if(e == undefined){
         Meteor.loginWithPassword(user.username,user.password);
 
       }
     });
+    
     return false;
   }
 });
