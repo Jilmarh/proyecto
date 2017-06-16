@@ -3,27 +3,37 @@
     <li>
       {{>mainwallform}}
     </li>
-    <li>
-      {{>mainwallLoadMsn}}
-    </li>
+    
   </ul>
 </template>
 <template name="mainwallform">
-  <div class="center">  
-      <form action="" method="POST" role="form" id="mainform" >
-         <legend>form title</legend>
-          <div class="form-group">
-             <textarea name="message" id="imput" class="form-control" rows="3" required="required" 
-             placeholder="¿pregunta tus dudas ?">
-              
-             </textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary" >
-            enviar
-          </button>
-      </form>
+  <div class="container">
+    <div class="row form-group">
+        <div class="col-xs-12 col-md-offset-2 col-md-8 col-lg-8 col-lg-offset-2">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-comment"></span> Comments
+                </div>
+                <div class="panel-body body-panel">
+                    
+                        <li>
+                          {{>mainwallLoadMsn}}
+                        </li>
+                    
+                </div>
+                <div class="panel-footer clearfix">
+                    <form action="" method="POST" role="form" id="mainform">
+                      <legend>Form title</legend>
+                        <div class="form-group">
+                        <textarea name="message" id="input" class="form-control" rows="3" required="required" placeholder="¿pregunta tus dudas ?"></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 </template>
 <template name="mainwallLoadMsn">
   {{# if isReady}}
@@ -38,39 +48,43 @@
   {{/if}}
 </template>
 <template name="ArticlesView">
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <ul>
-        <li>
-          <span class="badge">
-            {{date}}
-           </span>
-           <div class="userNameStyles">
-             david
-           </div>
-           <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-        </li>
+  <div class = "panel panel-info">
+   <div class = "panel-heading">
+        <span class="chat-img pull-left">
+            <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
+        </span>
+        <small class="pull-right text-muted">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </small>
+        <div class="header">
+            <strong class="primary-font">luis</strong> 
+            <small class="pull-right text-muted">
+              <span class="glyphicon glyphicon-time"></span>{{date}}
+            </small>  
+        </div>
+     </div>
+     
+     <div class = "panel-body">
         <li>
           {{msn}}
         </li>
-        <li>
-          <ul>
-            <li>
+        <small class="pull-right text-muted">
+              <li>
               <a href=""><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>me gusta</a>
-            </li>
-            <li>
               <a href="/pages?id={{_id}}" id="comentBtn"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>comentar</a>
             </li>
-          </ul>
-        </li>
-      </ul>
+        </small>
+     </div>
+  </div>
+  <div class = "panel panel-warning">
+   <div class = "panel-heading">
       {{#if showCommets}}
       <div class="comments">
         {{>mainWallCommentForm}}
       </div>
       {{/if}}
-    </div>
-  </div> 
+   </div>
+</div>
 </template>
 <template name="mainWallCommentForm">
   <form action="" method="POST" role="form" id="mainCommentForm" >

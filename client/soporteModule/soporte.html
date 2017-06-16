@@ -6,8 +6,8 @@
 			{{#if isInRole 'soporte' 'estudiante'}}
 				{{>templateEstudiante}}
 			{{else}}
-				{{#if isInRole 'soporte' 'admin'}}
-					{{>templateSupport}}
+				{{#if isInRole 'soporte' 'administrador'}}
+					{{>templateAdmin}}
 				{{/if}}
 			{{/if}}
 		{{/if}}

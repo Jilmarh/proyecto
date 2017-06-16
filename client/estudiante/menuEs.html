@@ -1,4 +1,4 @@
-<template name="menuFa">
+<template name="menuEs">
 	<div class="col-sm-3 col-md-2 affix-sidebar">
 		    	<div class="sidebar-nav">
 		  <div class="navbar navbar-default" role="navigation">
@@ -7,13 +7,25 @@
 		        <li class="active">
 		          <a href="#" data-toggle="collapse" data-target="#toggleDemo0" data-parent="#sidenav01" class="collapsed">
 		          <h4>
-		          Menu Facilitador
+		          Mi Menu
 		          </h4>
 		          </a>
 		        </li>
 		        <li><a href="/soporte"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-		        <li><a href=""><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
-		        <li><a href="/nuevocurso"><span class="glyphicon glyphicon-user"></span> Agregar cursos</a></li>
+		        <li><a href="/perfilE"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
+		        <li>
+		          <a href="#" data-toggle="collapse" data-target="#toggleDemo" data-parent="#sidenav01" class="collapsed">
+		          <span class="glyphicon glyphicon-book"></span>CURSOS<span class="caret pull-right"></span>
+		          </a>
+		          <div class="collapse" id="toggleDemo" style="height: 0px;">
+		            <ul class="nav nav-list">
+		              	<li><a href="">Operador basico de Pc</a></li>
+		                <li><a href="/cursos">Desarrollo web</a></li>
+		                <li><a href="">Php web services</a></li>
+		                <li><a href="">Otros</a></li>
+		            </ul>
+		          </div>
+		        </li>
 		        <li>
 		          <a href="#" data-toggle="collapse" data-target="#toggleDemo2" data-parent="#sidenav01" class="collapsed">
 		          <span class="glyphicon glyphicon-inbox"></span> Submenu 2 <span class="caret pull-right"></span>
