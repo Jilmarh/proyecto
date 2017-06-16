@@ -1,0 +1,102 @@
+<template name="mainwall">
+  <ul class="mainWallStyles">
+    <li>
+      {{>mainwallform}}
+    </li>
+    <li>
+      {{>mainwallLoadMsn}}
+    </li>
+  </ul>
+</template>
+<template name="mainwallform">
+  <div class="center">  
+      <form action="" method="POST" role="form" id="mainform" >
+         <legend>form title</legend>
+          <div class="form-group">
+             <textarea name="message" id="imput" class="form-control" rows="3" required="required" 
+             placeholder="¿pregunta tus dudas ?">
+              
+             </textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" >
+            enviar
+          </button>
+      </form>
+    </div>
+</template>
+<template name="mainwallLoadMsn">
+  {{# if isReady}}
+     <ul>
+       {{# each items}}
+         <li>{{>ArticlesView}}</li>
+      {{/each}}
+     </ul>
+      
+  {{else}}
+      <b>loading.......</b>
+  {{/if}}
+</template>
+<template name="ArticlesView">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <ul>
+        <li>
+          <span class="badge">
+            {{date}}
+           </span>
+           <div class="userNameStyles">
+             david
+           </div>
+           <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </li>
+        <li>
+          {{msn}}
+        </li>
+        <li>
+          <ul>
+            <li>
+              <a href=""><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>me gusta</a>
+            </li>
+            <li>
+              <a href="/pages?id={{_id}}" id="comentBtn"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>comentar</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      {{#if showCommets}}
+      <div class="comments">
+        {{>mainWallCommentForm}}
+      </div>
+      {{/if}}
+    </div>
+  </div> 
+</template>
+<template name="mainWallCommentForm">
+  <form action="" method="POST" role="form" id="mainCommentForm" >
+         <h1>comentar</h1>
+          <div class="form-group">
+             <textarea name="comment" id="imput" class="form-control" rows="1" required="required" 
+             placeholder="comenta aqui">
+              </textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" >
+            enviar
+          </button>
+    </form>
+    {{#if ready}}
+        {{#each listComments}}
+          <ul>{{>itemsComments}}</ul>
+        {{/each}}
+    {{else}}
+      <b>cargando...</b>
+    {{/if}}
+    
+</template>
+<template name="itemsComments">
+  <li>
+    {{msn}}
+  </li>
+  
+</template>

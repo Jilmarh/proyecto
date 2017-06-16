@@ -1,6 +1,12 @@
 import { Meteor } from 'meteor/meteor';
 
 Meteor.startup(() => {
+	Meteor.publish("getArticles",function(id){
+        return ARTICLE.find({user:id});
+	});
+	Meteor.publish("getComents",function(idArticle){
+		return COMMENT.find({idMsn:idArticle});
+	})
   // code to run on server at startup
 
 Meteor.methods({

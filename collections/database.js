@@ -1,3 +1,74 @@
+ARTICLE = new Mongo.Collection("articles");
+
+var articlesSchema =new SimpleSchema({
+    msn: {
+    	type :String
+    },
+    date: {
+    	type:Date,
+    	autoValue:function(){
+    		return new Date(); 
+    	}
+    },
+    user: {
+    	type:String,
+    	autoValue:function(){
+    		return this.userId
+    	}
+    },
+    mediaContent: {
+    	type:String,
+    	autoValue:function(){
+    		return "";
+    	}
+    }
+});
+
+ARTICLE.allow({
+	insert:function(userId,params){
+		console.log("entra")
+        return !!userId;
+	}
+});
+
+ARTICLE.attachSchema(articlesSchema);
+
+
+
+COMMENT = new Mongo.Collection("comment");
+
+var commentSchema = new SimpleSchema({
+	msn: {
+		type : String,
+	},
+	date: {
+		type: Date,
+		autoValue: function(){
+			return new Date();
+		}
+	},
+	user: {
+		type: String,
+		autoValue: function(){
+			return this.userId;
+		}
+	},
+	idMsn: {
+		type: String
+	}
+});
+
+COMMENT.attachSchema(commentSchema);
+
+COMMENT.allow({
+	insert:function(userId,params){
+        return !!userId;
+	}
+});
+
+
+
+
 CHAT = new  Mongo.Collection("chat");
 CONNECT = new Mongo.Collection("connect");
 var chatSchema = new SimpleSchema({
