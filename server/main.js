@@ -2,14 +2,27 @@ import { Meteor } from 'meteor/meteor';
 
 Meteor.startup(() => {
 	Meteor.publish("getArticles",function(id){
+
         return ARTICLE.find({user:id});
+	});
+	Meteor.publish("getLikes",function(){
+        return LIKES.find();
 	});
 	Meteor.publish("getComents",function(idArticle){
 		return COMMENT.find({idMsn:idArticle});
 	})
+
+	Meteor.publish("getListaCursos",function(){
+		return CURSO.find();
+	})
   // code to run on server at startup
 
 Meteor.methods({
+
+		"addcurso": function(obj){
+			CURSO.insert(obj);
+			return true;
+		},
 		"checkConnection": function(id){
 			// select * from connect where idus=id and stade = true
 			var result = CONNECT.find({idUs:id,stade:true}).fetch();
@@ -25,6 +38,11 @@ Meteor.methods({
 		},
 		"disconnection": function(id){
 			CONNECT.update(id,{$set:{stade:false,disconnectionDate:new Date()}});
+			return true;
+		},
+		"addlike" : function(id){
+			var obj={"idArt":id}
+			LIKES.insert(obj);
 			return true;
 		}
 	});

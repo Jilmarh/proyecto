@@ -1,4 +1,14 @@
-ARTICLE = new Mongo.Collection("articles");
+ARTICLE = new Mongo.Collection("articles",{
+	transform:function(item){
+		var list_likes=LIKES.find({idArt:item._id}).fetch();
+		console.log(list_likes)
+		/*for(var i=0;i<list_likes.length;i++)
+		{
+			concole.log(list_likes[i]);
+		}*/
+		return item;
+	}
+});
 
 var articlesSchema =new SimpleSchema({
     msn: {
@@ -66,7 +76,20 @@ COMMENT.allow({
 	}
 });
 
+LIKES = new Mongo.Collection("likes");
+var likesSchema =new SimpleSchema({
+	idArt: {
+		type:String
+	},
+	idUser : {
+		type: String,
+		autoValue : function(){
+			return this.userId;
+		}
+	}
+});
 
+LIKES.attachSchema(likesSchema);
 
 
 CHAT = new  Mongo.Collection("chat");
@@ -102,27 +125,25 @@ var connectSchema = new SimpleSchema({
 });
 CONNECT.attachSchema(connectSchema);
 
-//CURSO = new Mongo.Collection("admicurso");
-//var Schemas ={}
-//Schemas.admicurso = new SimpleSchema({
-//	Descripcion:{
-//		type : String,
-//		label : "Descripcion"
-//	},
-//	Titulo : {
-//		type : String,
-//		labe : "Titulo"
-//	},
-//	Inicio : {
-//		type : Date,
-//		label : "Inicio"
-//	},
-//	Final : {
-//		type : Date,
-//		label : "Final"
-//	},
-//	idUsuario : {
-//		type : String
-//	}
-//});
+CURSO = new Mongo.Collection("cursos");
+var cursos = new SimpleSchema({
+	Titulo : {
+		type : String
+	},
+	Descripcion:{
+		type : String
+	},
+	Inicio : {
+		type : Date
+	},
+	Final : {
+		type : Date
+	},
+	id_US: {
+		type : String
+	}
+});
+CURSO.attachSchema(cursos);
+
+//POSTS=new Mongo.Collection("news");
 

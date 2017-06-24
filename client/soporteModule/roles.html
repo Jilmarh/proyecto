@@ -1,0 +1,20 @@
+<template name="soporte" >
+{{#if currentUser}}
+		{{#if isInRole 'soporte' 'profesor'}}
+			{{>templateProfesor}}
+		{{else}}
+			{{#if isInRole 'soporte' 'estudiante'}}
+				{{>templateEstudiante}}
+			{{else}}
+				{{#if isInRole 'soporte' 'administrador'}}
+					{{>templateAdmin}}
+				{{/if}}
+			{{/if}}
+		{{/if}}
+	{{else}}
+	<div class="alert alert-warning alert-dismissable">
+	  <button type="button" class="close" data-dismiss="alert">&times;</button>
+	  <strong>¡Cuidado!</strong>señor usuario para hacer usu del soporte tecnico es necesario que cree una cuenta primero
+	</div>
+{{/if}}
+</template>

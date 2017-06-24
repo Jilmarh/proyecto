@@ -10,7 +10,7 @@ Template.mainwallform.events({
  
 Template.mainwallLoadMsn.helpers({
 	isReady(){
-       return FlowRouter.subsReady("loadWall");
+       return FlowRouter.subsReady("getLikes")&&FlowRouter.subsReady("loadWall");
 	},
 	items(){
        return ARTICLE.find();
@@ -21,6 +21,14 @@ Template.ArticlesView.events({
 		
 		//e.preventDefault();
 		comments.set(true);
+	},
+	"click #like_ui": function(e){
+		e.preventDefault();
+		Meteor.call("addlike",this._id,function(error,result){
+			if(result){
+				alert("like insertado");
+			}
+		});
 	}
 });
 Template.mainWallCommentForm.events({
@@ -33,10 +41,9 @@ Template.mainWallCommentForm.events({
 		}
 });
 Template.ArticlesView.helpers({
-	showCommets(){
+	showComments(){
 		return comments.get();
 	}
-
 });
 Template.mainWallCommentForm.helpers({
 	
