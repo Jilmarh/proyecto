@@ -1,3 +1,5 @@
+PERFIL = new Mongo.Collection("perfil");
+
 ARTICLE = new Mongo.Collection("articles",{
 	transform:function(item){
 		var list_likes=LIKES.find({idArt:item._id}).fetch();

@@ -1,0 +1,82 @@
+<template name="sistema_baneo">
+	{{>banner}}
+	  	  <div class="wrapper row1">
+	  <header id="header" class="hoc clear">
+	    <div id="logo" class="fl_left">
+	      <h1><a href="index.html">Edu .Bloc</a></h1>
+	      <p>Educacion en linea</p>
+	    </div>
+	  </header>
+	  </div>
+	{{>menuAd}}
+    <div  class="col-sm-9 col-md-10 affix-content" style="background: red">
+	  <h1>Usuarios Pendientes</h1>
+	  <p>Los usuarios que aun no fueron activados en el sistema</p> 
+	  <div  class="table-editable " >
+	    <table class="table table-hover" >
+	    	<thead>
+		    	<tr>
+			        <th>Nombre</th>
+			        <th>Apellido</th>	
+			        <th>Estado</th> 
+			        <th>Que Desea Ejercer</th>  
+			        <th></th>    
+			        <th>Roles</th>
+			  
+		      	</tr>
+	         </thead>
+	      {{#each listPendientes}}
+	      
+	       <tbody>
+	      <tr>
+
+		        <td scope="row">{{username}}</td>
+		        <td>{{profile.lastname}}</td>
+		     
+		 		<td>Inactiva</td>
+		 		   <td>{{profile.tipodeusuario}}</td>
+		        <td scope="row">
+		        	<button id="Habilitar" type="button" class="btn btn-primary active"><span class="glyphicon glyphicon-user"> Habilitar</span></button>
+		        </td>
+
+		          <td scope="row"> 
+
+		        	<button id="rolestu" type="button" class="btn btn-primary active"><span class="glyphicon glyphicon-user"> Estudiante</span></button>
+		        	<button id="rolfacili" type="button" class="btn btn-primary active"><span class="glyphicon glyphicon-user"> Facilitador</span></button>
+		        </td>
+		      </tr>	
+	         </tbody>
+	      {{/each}}       
+	    </table>
+	  </div>
+	</div>
+	<div class="col-sm-9 col-md-10 affix-content" style="background: blue">
+	  <h1>Usuarios</h1>
+	  <p>Los usuarios que estan activados en el sistema</p> 
+	  <div  class="table-editable">
+	    <table class="table table-hover	">
+    	  <thead>
+		    <tr>
+		       <th>Nombre</th>
+			   <th>Apellido</th>
+			    <th>Estado</th>
+			    <th></th>
+		    </tr>
+		  </thead>
+	      {{#each listActivos}}
+	       <tbody>
+		      <tr>
+		        <td>{{username}}</td>
+		        <td>{{profile.lastname}}</td>	
+		       	<td>Activo</td>	
+		        <td>
+		           <button id="Deshabilitar" type="button" class="btn btn-primary active"><span class="glyphicon glyphicon-align-right"> Dar baja</span></button>   
+		        </td>
+		      
+		      </tr>	
+	        </tbody>
+	      {{/each}}       
+	    </table>
+	  </div>
+	</div>
+</template>

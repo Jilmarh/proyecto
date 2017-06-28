@@ -1,3 +1,4 @@
+
 import { Meteor } from 'meteor/meteor';
 
 Meteor.startup(() => {
@@ -10,14 +11,25 @@ Meteor.startup(() => {
 	});
 	Meteor.publish("getComents",function(idArticle){
 		return COMMENT.find({idMsn:idArticle});
-	})
-
+	});
 	Meteor.publish("getListaCursos",function(){
 		return CURSO.find();
-	})
+	});
+	Meteor.publish('listPendientes', function() {
+	  
+	  return Meteor.users.find();
+	});
   // code to run on server at startup
 
 Meteor.methods({
+	    "delUsuario":function(id){
+			//console.log(id);	
+			Meteor.users.update(id,{ $set: {'profile.estado':false }});
+		},
+	    "addUsuario":function(id){
+			//console.log(id);	
+			Meteor.users.update(id,{ $set: {'profile.estado':true }});
+		},
 
 		"addcurso": function(obj){
 			CURSO.insert(obj);
@@ -47,3 +59,4 @@ Meteor.methods({
 		}
 	});
 });
+
