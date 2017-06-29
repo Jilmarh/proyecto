@@ -1,9 +1,9 @@
 $(function() {
 
   var app_id = '232508370591828';
-  var scopes = 'email, user_friends, user_online_presence';
+  var scopes = 'email, user_friends, public_profile';
 
-  var btn_login = '<a href="#" id="login" class="facebook-before"><span class="fontawesome-facebook"></span><button class="facebook">continuar con facebook</button></a>';
+  var btn_login = '<a href="#" id="loginn" class="facebook-before"><span class="fontawesome-facebook"></span><button class="facebook">continuar con facebook</button></a>';
 
   var div_session = "<div id='facebook-session'>"+
             "<strong></strong>"+
@@ -45,8 +45,8 @@ $(function() {
 
     var getFacebookData =  function() {
       FB.api('/me', function(response) {
-        $('#login').after(div_session);
-        $('#login').remove();
+        $('#loginn').after(div_session);
+        $('#loginn').remove();
         $('#facebook-session strong').text("Bienvenido: "+response.name);
         $('#facebook-session img').attr('src','http://graph.facebook.com/'+response.id+'/picture?type=large');
       });
