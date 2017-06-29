@@ -147,5 +147,6 @@ var cursos = new SimpleSchema({
 });
 CURSO.attachSchema(cursos);
 
+
 //POSTS=new Mongo.Collection("news");
 

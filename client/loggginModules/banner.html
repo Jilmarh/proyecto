@@ -1,17 +1,83 @@
 <template name="banner">
-	<div class="wrapper row0">
-  <div id="topbar" class="hoc clear">
-  <div class="right">
-    {{#if currentUser}}
-          <div class="btn-group">
-                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">{{username}}
-                    <span class="caret"></span>
-                  </button>
-          </div>
-  {{else}}
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear">
+      <div id="logo" class="fl_left">
+      <h1><a href="index.html">Edu .Bloc</a></h1>
+        <p>Educacion en linea</p>
+      </div>  
+    </header>
+  </div>
+  <div class="navbar navbar-inverse">
+    <div class="collapse navbar-collapse" id="myNavbar">
+      {{#if currentUser}}
+          {{#if isInRole 'soporte' 'profesor'}}
+              {{>menuFa}}
+          {{else}}
+              {{#if isInRole 'soporte' 'estudiante'}}
+                  {{>menuEs}}
+              {{else}}
+                  {{#if isInRole 'soporte' 'administrador'}}
+                       {{>menuAd}}
+                  {{/if}}
+              {{/if}}
+          {{/if}}
+      {{/if}}
+      
+      <form class="navbar-form navbar-right">
+      <div class="input-group">        
+        <div class="input-group-btn">
+          <button class="btn btn-default-1" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+    <input type="text" class="form-control" placeholder="Search">
+      </div> 
+      {{#if currentUser}}
+  <ul class="nav navbar-nav navbar-right">
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                          <span class="glyphicon glyphicon-user"></span> 
+                          <strong>{{username}}</strong>
+                          <span class="glyphicon glyphicon-chevron-down"></span>
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li>
+                              <div class="navbar-login">
+                                  <div class="row">
+                                      <div class="col-lg-4">
+                                          <p class="text-center">
+                                              <span class="glyphicon glyphicon-user icon-size"></span>
+                                          </p>
+                                      </div>
+                                      <div class="col-lg-8">
+                                          <p class="text-left"><strong>{{username}}</strong></p>
+                                          <p class="text-left small">correoElectronico@email.com</p>
+                                          <p class="text-left">
+                                          </p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </li>
+                  <li class="divider"></li>
+                  <li>
+                      <div class="navbar-login navbar-login-session">
+                           <div class="row">
+                              <div class="col-lg-12">
+                                  <p>
+                                    <a href="" id="logout" class="btn btn-danger btn-block">Cerrar Sesion</a>
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+{{else}}
     <a class="btn btn-primary" data-toggle="modal" href='#modal-id'>Login</a>
-  {{/if}}
-  </div>
-  </div>
+{{/if}}  
+    </form>
+        
+    </div>
 </div>
 </template>

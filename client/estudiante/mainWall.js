@@ -10,8 +10,7 @@ Template.mainwallform.events({
  
 Template.mainwallLoadMsn.helpers({
 	isReady(){
-       //return FlowRouter.subsReady("getLikes")&&FlowRouter.subsReady("loadWall");
-       return FlowRouter.subsReady("loadWall");
+       return FlowRouter.subsReady("getLikes")&&FlowRouter.subsReady("loadWall");
 	},
 	items(){
        return ARTICLE.find();
