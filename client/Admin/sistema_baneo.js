@@ -1,7 +1,7 @@
 Template.sistema_baneo.helpers({
 	listPendientes: function(){
-		//return Meteor.users.find({ "$and": [{'profile.estado':false}]});
-		return Meteor.users.find().fetch();
+		return Meteor.users.find({ "$and": [{'profile.estado':false}]});
+		//return Meteor.users.find().fetch();
 			console.log("entras");
 	},
 	listActivos: function(){
@@ -47,3 +47,4 @@ Template.sistema_baneo.events({
 });
 
 Meteor.subscribe('listPendientes');
+

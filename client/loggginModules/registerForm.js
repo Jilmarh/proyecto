@@ -11,7 +11,8 @@ Template.registerForm.events({
       "profile" : {
             "lastname" : e.target.lastname.value,
             "tipodeusuario" : e.target.tipodeusuario.value,
-            "country" : e.target.country.value
+            "country" : e.target.country.value,
+            "estado" : false, 
       }
     };
     $('#modal-id').modal('hide');

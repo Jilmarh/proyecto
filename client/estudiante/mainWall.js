@@ -11,7 +11,6 @@ Template.mainwallform.events({
 Template.mainwallLoadMsn.helpers({
 	isReady(){
        //return FlowRouter.subsReady("getLikes")&&FlowRouter.subsReady("loadWall");
-       console.log("entra");
        return FlowRouter.subsReady("loadWall");
 	},
 	items(){

@@ -30,7 +30,14 @@ Meteor.methods({
 			//console.log(id);	
 			Meteor.users.update(id,{ $set: {'profile.estado':true }});
 		},
-
+		"addEstu":function(id){
+			//console.log(id);	
+			Roles.addUsersToRoles(id,['soporte'],'estudiante');
+		},
+		"addFaci":function(id){
+			//console.log(id);	
+			Roles.addUsersToRoles(id,['soporte'],'profesor');
+		},
 		"addcurso": function(obj){
 			CURSO.insert(obj);
 			return true;
