@@ -1143,3 +1143,8 @@ a.list-group-item.active small {
   
 }
 
+.uploadPanel {
+	height:50px;
+  width: 100%;
+}
+           

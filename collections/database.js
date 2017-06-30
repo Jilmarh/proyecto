@@ -148,5 +148,34 @@ var cursos = new SimpleSchema({
 CURSO.attachSchema(cursos);
 
 
+MATERIAL = new Mongo.Collection("material");
+var material = new SimpleSchema({
+	material : {
+		type : String
+	},
+	DescripcionM:{
+		type : String
+	},
+	id_US: {
+		type : String
+	}
+});
+MATERIAL.attachSchema(material);
+
+ARCHIVO = new Mongo.Collection("archivo");
+var archivo = new SimpleSchema({
+	images:{
+		type: String,
+		label:"images"
+	},
+	DescripcionA:{
+		type : String
+	},
+	id_US: {
+		type : String
+	}
+});
+ARCHIVO.attachSchema(archivo);
+
 //POSTS=new Mongo.Collection("news");
 

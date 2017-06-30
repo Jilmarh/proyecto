@@ -1,6 +1,12 @@
 import { Meteor } from 'meteor/meteor';
 
 Meteor.startup(() => {
+	UploadServer.init({
+	    tmpDir: process.env.PWD + '/.tmp',
+	    uploadDir: process.env.PWD + '/.uploads/',
+	    checkCreateDirectories: true //create the directories for you
+	});
+
 	Meteor.publish("getArticles",function(id){
 
         return ARTICLE.find({user:id});
@@ -18,6 +24,15 @@ Meteor.startup(() => {
 	  
 	  return Meteor.users.find();
 	});
+	
+	Meteor.publish("getMaterial",function(){
+		return MATERIAL.find();
+	});
+
+	Meteor.publish("getArchivo",function(){
+		return ARCHIVO.find();
+	});
+
   // code to run on server at startup
 
 Meteor.methods({
@@ -43,6 +58,14 @@ Meteor.methods({
 		},
 		"addcurso": function(obj){
 			CURSO.insert(obj);
+			return true;
+		},
+		"addmaterial": function(obj){
+			MATERIAL.insert(obj);
+			return true;
+		},
+		"addarchivo": function(obj){
+			ARCHIVO.insert(obj);
 			return true;
 		},
 		"checkConnection": function(id){

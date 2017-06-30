@@ -1,0 +1,53 @@
+<template name="material">
+{{>banner}}
+          <div>
+            {{#each material}}
+                  {{> mostrarMaterial}}          
+            {{/each}}
+          </div>
+</template>
+<template name="mostrarMaterial">
+  <div class="row affix-row">  
+    <div class="col-sm-24 col-md-24 affix-content">
+      <div class="wrap" >
+        <main class="hoc container clear"> 
+              <ul class="nospace group services">
+                <li class="one_third first btmspace-30">
+                  <article><a href="#"></a>
+                    <h2>
+                      {{material}}
+                    </h2>
+                    <p>{{DescripcionM}} </p>
+                    {{#if currentUser}}
+                        {{#if isInRole 'soporte' 'profesor'}}
+                          <div id="topbar" class="hoc clear">
+                              <div class="fl_left">
+                                 <ul class="nospace">
+                                    <li><a href="/archivos">Crear Archivos</a></li>
+                                    <li><a href="/mostrarArchivo">Ver Archivos</a></li>
+                                    <li><a href="/pages">Chat</a></li>      
+                                 </ul>
+                             </div>
+                          </div>
+                        {{else}}
+                          {{#if isInRole 'soporte' 'estudiante'}}
+                            <div id="topbar" class="hoc clear">
+                                <div class="fl_left">
+                                   <ul class="nospace">
+                                      <li><a href="/mostrarArchivo">Archivos Del Curso</a></li>
+                                      <li><a href="/pages">Chat</a></li>      
+                                   </ul>
+                               </div>
+                            </div>
+                          {{/if}}
+                        {{/if}}
+                    {{/if}}
+                  </article>
+                </li>
+              </ul>
+              <div class="clear"></div>
+            </main>
+    </div>
+  </div>
+  </div>
+</template>

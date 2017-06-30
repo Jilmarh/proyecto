@@ -33,3 +33,5 @@ dburles:collection-helpers
 chrismbeckett:toastr
 raix:handlebar-helpers
 
+tomi:upload-jquery
+tomi:upload-server

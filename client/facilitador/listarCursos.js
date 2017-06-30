@@ -13,5 +13,8 @@ Template.listarCursos.helpers({
 		Meteor.subscribe("getListaCursos");
 		//console.log(CURSO.find().fetch());
 		return CURSO.find().fetch();
+	},
+	URL(){
+		return URL.get();
 	}
 });
