@@ -33,3 +33,5 @@ dburles:collection-helpers
 chrismbeckett:toastr
 raix:handlebar-helpers
 
+accounts-facebook
+facebook-config-ui
