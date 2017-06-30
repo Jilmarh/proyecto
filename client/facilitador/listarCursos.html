@@ -25,13 +25,7 @@
                 <div class="text-center">
                   <h4 class="list-group-item-heading spacer-10"> {{Titulo}} </h4>
                   <p class="list-group-item-text">{{Descripcion}}</p>
-                  <hr> 
-                    {{#if edit.get}}
-                      <span id="save" class="glyphicon glyphicon-check" aria-hidden="true"></span>
-                    {{else}}
-                    <span id="edit" class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                    {{/if}}
-                    <span id="remove" class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    {{>modalarchivos}}
                 </div>
               </div>
             <div class="col-md-3 text-center">                  
