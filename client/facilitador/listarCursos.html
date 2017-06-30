@@ -1,19 +1,18 @@
 <template name="listarCursos">
 	{{>banner}}
-          <div>
+  <div class="wrapper bgded overlay" style="background-image:url('images/demo/cursos2.jpg');" width="17000px" height="700px">
+        <div>
             {{#each cursos}}
-                {{#if edit.get}}
-                  {{>editcursos}}
-                {{else}}
-                  {{> mostrarUnCurso}}
-                {{/if}}           
+                  {{> mostrarUnCurso}}          
             {{/each}}
-          </div>	
+          </div>
+  </div>	
 </template>
 <template name="mostrarUnCurso">
 <div class="pull-rigth">
   <div class="offer">
-    <div class="well" style=" width: 90%">    
+    <div class="" align="center">
+      <div class="well" align="center" style=" width: 50%">    
         <div class="list-group">
           <a href="#" class="list-group-item active ">
             <div class="media col-md-3">
@@ -26,6 +25,7 @@
                   <h4 class="list-group-item-heading spacer-10"> {{Titulo}} </h4>
                   <p class="list-group-item-text">{{Descripcion}}</p>
                   <hr> 
+                  
                     {{#if edit.get}}
                       <span id="save" class="glyphicon glyphicon-check" aria-hidden="true"></span>
                     {{else}}
@@ -53,21 +53,7 @@
           </a>
         </div>
     </div>
+    </div>
   </div>
 </div>
-</template>
-
-<template name="editcursos">
-  <td>
-    <input id="Titulo" type="" class="form-control" name="Titulo" value="{{Titulo}}">
-  </td>
-  <td>
-   <input id="Descripcion" type="" class="form-control" name="Descripcion" value="{{Descripcion}}">
-  </td>
-  <td>
-    <input id="Inicio" type="" class="form-control" name="lastname" value="{{Inicio}}">
-  </td>
-  <td>
-    <input id="Final" type="" class="form-control" name="lastname" value="{{Final}}">
-  </td>
 </template>

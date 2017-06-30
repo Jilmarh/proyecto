@@ -1,4 +1,3 @@
-
 import { Meteor } from 'meteor/meteor';
 
 Meteor.startup(() => {
@@ -22,6 +21,10 @@ Meteor.startup(() => {
   // code to run on server at startup
 
 Meteor.methods({
+		"deleteCurso": function(msnObj){
+			CURSO.remove(msnObj);
+			return true;
+		},
 	    "delUsuario":function(id){
 			//console.log(id);	
 			Meteor.users.update(id,{ $set: {'profile.estado':false }});
@@ -63,6 +66,17 @@ Meteor.methods({
 			var obj={"idArt":id}
 			LIKES.insert(obj);
 			return true;
+		},
+		"updateperfil":function(id,obj){
+			//console.log(id);	
+
+			Meteor.users.update({_id:id},{$set:{
+				'username':obj.username,
+				//'services.password.bcrypt':obj.password,
+				'emails.0.address':obj.email,
+				'profile.tipodeusuario':obj.tipodeusuario,
+			    'profile.lastname':obj.lastname
+			}});
 		}
 	});
 });

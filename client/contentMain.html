@@ -1,14 +1,52 @@
 <template name="contentMain">
-  <div class="wrapper bgded overlay" style="background-image:url('/images/demo/nose2.jpg');">
-  <div id="pageintro" class="hoc clear"> 
-    <!-- ################################################################################################ -->  
-    <article>   
-      <div>
-        <p class="heading">bienvenidos</p>
-        <h2 class="heading">Plataforma Virtual Edu .Blog</h2>
-        <p>informacion a tu alcance </p>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <div class="wrapper bgded" style="background-image:url('images/demo/1.jpg');" width="17000px" height="700px">
+      <div id="pageintro" class="hoc clear"> 
+      <article class="hoc container clear center"> 
+        <!-- ################################################################################################ -->
+        <h2 class="font-x3" style="color: black">BIENVENIDO A TU PLATAFORMA</h2>
+        <h2 class="heading" style="color: white">Plataforma Virtual Edu .Blog</h2>
+        <p style="color: white">informacion a tu alcance </p>
+        <p class="nospace"><a class="btn medium" href="#">Read More &raquo;</a></p>
+        <!-- ################################################################################################ -->
+      </article>
       </div>
-    </article>
+    </div>
+    </div>
+
+    <div class="item">
+      <div class="wrapper bgded" style="background-image:url('images/demo/eduVirtual.jpg');" width="17000px" height="700px">
+      <div id="pageintro" class="hoc clear"> 
+      <article class="hoc container clear center"> 
+        <!-- ################################################################################################ -->
+        <h2 class="font-x3" style="color: black"></h2>
+        <p class="btmspace-50" style="color: black"></p>
+        <p class="nospace"><a class="btn medium" href="#">Read More &raquo;</a></p>
+        <!-- ################################################################################################ -->
+      </article>
+      </div>
+    </div>
+    </div>
   </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
 </template>

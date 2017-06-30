@@ -1,0 +1,106 @@
+<template name="perfil">
+	{{>banner}}
+<div class="wrapper bgded" style="background-image:url('images/demo/perfil.jpg');" width="17000px" height="700px">
+     
+               <!-- {{#if image}}
+                    <div class="img-perfil">
+                        <figure>
+                            <img src="{{imagen.link}}" alt="profile" class="img-responsive img-centrar" name="regimage" id="{{imageuser}}">
+                        </figure>
+                    </div>
+                {{else}}
+                  <div class="img-perfil">
+                          <figure>
+                              <img align="left" class="fb-image-profile thumbnail" src="/image/usu1.png" alt="Profile image example" id="{{imageuser}}"/>
+                          </figure>
+                      </div>
+                {{/if}}-->
+                
+                <div id="myTabContent" class="tab-content">
+                                        <div class="tab-pane active in" id="login">
+                                                <table id="tablaprofile" class="table">
+                                                    <tbody>
+                                                        
+                                                        <tr><strong>Nombre :</strong>   {{username}}</tr>
+                                                        <tr><strong>Apellido :</strong>  {{profile.[0].lastname}} </tr>
+                                                        <tr><strong>Contribuidor :</strong>  {{profile.tipodeusuario}} </tr>
+                                                        <tr><strong>Email :</strong>  {{email}} </tr>
+                                                    </tbody>
+                                                </table>
+                                            <div id="BotonEditar">
+                                                <button type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"><strong>Editar</strong></button> 
+                                            </div>
+                                            <div id="myModal" class="modal fade" role="dialog">
+                                                <div class="modal-dialog">
+
+                                           
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                  <h4 class="modal-title" >Modal Header</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                  <form class="form-horizontal" role="form">
+                                                   <div class="form-group">
+                                                      <label for="inputEmail3" class="col-sm-2 control-label">Username</label>
+                                                      <div class="col-sm-10">
+                                                        <input type="text" name="username" class="form-control" id="inputEmail3" autocomplete="off"  value="{{username}}">
+                                                      </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                      <label for="inputEmail3" class="col-sm-2 control-label">Password</label>
+                                                      <div class="col-sm-10">
+                                                        <input type="password" name="password" class="form-control" id="inputEmail3" autocomplete="off"  placeholder="Cambiar password">
+                                                      </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                      <label for="inputEmail3" class="col-sm-2 control-label">Nombre</label>
+                                                      <div class="col-sm-10">
+                                                        <input type="text" name="nombre" class="form-control" id="inputEmail3" autocomplete="off"  value="{{nombre}}">
+                                                      </div>
+                                                    </div>
+                                                     <div class="form-group">
+                                                      <label for="inputEmail3" class="col-sm-2 control-label">Apellido</label>
+                                                      <div class="col-sm-10">
+                                                        <input type="text" name="apellido" class="form-control" id="inputEmail3" autocomplete="off"  value="{{apellido}}">
+                                                      </div>
+                                                    </div>
+                                                   
+                                                     
+                                                    <div class="form-group">
+                                                      <label for="inputPassword3" class="col-sm-2 control-label">Email</label>
+                                                      <div class="col-sm-10">
+                                                        <input type="email" name="email" class="form-control" id="inputPassword3" autocomplete="off"   value="{{email}}">
+                                                      </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                      <label for="inputPassword3" class="col-sm-2 control-label">Country</label>
+                                                      <div class="col-sm-10">
+                                                        <input type="country" name="email" class="form-control" id="inputPassword3" autocomplete="off"   value="{{country}}">
+                                                      </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                    <label for="ejemplo_email_3" class="col-lg-2 control-label">Imagen</label>
+                                                    <div class="col-lg-10">
+                                                     <input id="input-6" name="input6[]" type="file" multiple class="file-loading">
+                                                    </div>
+                                                  </div>
+                                                    <div class="form-group">
+                                                      <div class="col-sm-offset-5">
+                                                        <button type="submit" class="btn btn-default">Guardar</button>
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                      </div>
+                                                    </div>
+
+                                                  </form>
+                                                </div>
+                                               
+                                              </div>
+
+                                            </div>
+                                          </div>  
+                                        </div>
+                                    </div>
+     
+    </div>
+</template>
