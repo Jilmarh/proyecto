@@ -1,7 +1,8 @@
 <template name="sistema_baneo">
 	{{>banner}}
-    <div  class="col-sm-9 col-md-10 affix-content" style="background: red">
-	  <h1>Usuarios Pendientes</h1>
+    <div  class="col-sm-20 col-md-12 affix-content" style="background: #717D7E" >
+    <br>
+	  <h2>Usuarios Pendientes</h2>
 	  <p>Los usuarios que aun no fueron activados en el sistema</p> 
 	  <div  class="table-editable " >
 	    <table class="table table-hover" >
@@ -27,13 +28,13 @@
 		 		<td>Inactiva</td>
 		 		   <td>{{profile.tipodeusuario}}</td>
 		        <td scope="row">
-		        	<button id="Habilitar" type="button" class="btn btn-primary active"><span class="glyphicon glyphicon-user"> Habilitar</span></button>
+		        	<button id="Habilitar" type="button" class="btn medium"><span class="glyphicon glyphicon-user"> Habilitar</span></button>
 		        </td>
 
 		          <td scope="row"> 
 
-		        	<button id="rolestu" type="button" class="btn btn-primary active"><span class="glyphicon glyphicon-user"> Estudiante</span></button>
-		        	<button id="rolfacili" type="button" class="btn btn-primary active"><span class="glyphicon glyphicon-user"> Facilitador</span></button>
+		        	<button id="rolestu" type="button" class="btn medium"><span class="glyphicon glyphicon-user"> Estudiante</span></button>
+		        	<button id="rolfacili" type="button" class="btn medium"><span class="glyphicon glyphicon-user"> Facilitador</span></button>
 		        </td>
 		      </tr>	
 	         </tbody>
@@ -41,8 +42,9 @@
 	    </table>
 	  </div>
 	</div>
-	<div class="col-sm-9 col-md-10 affix-content" style="background: blue">
-	  <h1>Usuarios</h1>
+	<div class="col-sm-20 col-md-12 affix-content" style="background: #AAB7B8 ">
+	 <br>
+	  <h2>Usuarios</h2>
 	  <p>Los usuarios que estan activados en el sistema</p> 
 	  <div  class="table-editable">
 	    <table class="table table-hover	">
@@ -61,7 +63,7 @@
 		        <td>{{profile.lastname}}</td>	
 		       	<td>Activo</td>	
 		        <td>
-		           <button id="Deshabilitar" type="button" class="btn btn-primary active"><span class="glyphicon glyphicon-align-right"> Dar baja</span></button>   
+		           <button id="Deshabilitar" type="button" class="btn medium"><span class="glyphicon glyphicon-align-right"> Dar baja</span></button>   
 		        </td>
 		      
 		      </tr>	

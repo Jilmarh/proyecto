@@ -1,0 +1,34 @@
+<template name="ver_usuarios">
+   {{>banner}}
+   <div  class="col-sm-20 col-md-12 affix-content" style="background: #CFDBC5">
+   <br>
+   <h2>
+   	  USUARIOS REGISTRADOS EN EL SISTEMA
+   </h2>
+     <div  class="table-editable " >
+	    <table class="table table-hover" >
+	    	<thead>
+		    	<tr> 
+			        <th>Nombre</th>
+			        <th>Apellido</th>	   
+			        <th>Rol</th>
+		      	</tr>
+	         </thead>
+	             {{#each listestu}}
+
+	         <tbody>
+	           <tr>
+                   <td> <img src="/images/demo/avatar.png">{{username}}</td>
+		           <td>{{profile.lastname}}</td>
+		 		   <td>{{profile.tipodeusuario}}</td>
+	             
+
+		      </tr>	
+	         </tbody>
+	        
+	       {{/each}}
+          
+	    </table>
+	  </div>	 
+   </div>
+</template>
