@@ -40,7 +40,7 @@ Template.sistema_baneo.events({
 	},
 	"click #rolfacili":function(e){
 		//e.preventDefault();
-		alert(this._id);
+		//alert(this._id);
 		id=this._id;
 		Meteor.call("addFaci",id);
 	}

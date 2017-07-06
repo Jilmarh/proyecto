@@ -1,69 +1,78 @@
 <template name="registerForm">
-  <div class="container">
-        <div class="row centered-form">
-        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Bienvenido Por Favor Registrate</h3>
-            </div>
-            <div class="panel-body">
-              <form role="form" method="POST">
-                <div class="row">
-                  <div class="col-xs-6 col-sm-6 col-md-6">
-                    <div class="form-group">
-                            <label class="control-label" for="">Nombre</label>
-                            <span class="help-block"></span>
-                            <input type="text" class="form-control" name="username" id="" placeholder="username">
-                    </div>
-                  </div>
-                  <div class="col-xs-6 col-sm-6 col-md-6">
-                    <div class="form-group">
-                      <label class="control-label" for="">Apellido</label>
-                            <span class="help-block"></span>
-                            <input type="text" class="form-control" name="lastname" id="" placeholder="lastname">
-                    </div>
-                  </div>
-                </div>
+  {{>banner2}}
+  <head>
+    <script src="dist/sweetalert-dev.js"></script>
+    <link rel="stylesheet" href="dist/sweetalert.css">
+  </head>
+ <body>
+   <div class="wrapper row1">
+  <header id="header" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div id="logo" class="fl_left">
+      <h1><a href="index.html">Edu .Bloc</a></h1>
+      <p>Educacion en linea</p>
+    </div>
+    <!-- ################################################################################################ -->
+    
+  </header>
+</div>
+<div class="item active">
+      <div class="wrapper bgded" style="background-image:url('images/demo/1.jpg');" width="17000px" height="700px">
+      <article class="hoc container clear center">    
+        <div class="col-md-12">
+            <div class="well well-sm">
+                <form class="form-horizontal" method="post">
+                    <fieldset>
+                        <h3 class="panel-title">Bienvenido Por Favor Registrate</h3>
 
-                <div class="form-group">
-                  <label class="control-label" for="">email</label>
-                        <span class="help-block"></span>
-                        <input type="text" name="email" class="form-control" id="" placeholder="Email">
-                </div>
-
-                <div class="row">
-                    <div class="form-group">
-                      <label class="control-label" for="">Password</label>
-                              <span class="help-block"></span>
-                              <input type="password" name="password" class="form-control" id="" placeholder="password">
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label" for="">Repassword</label>
-                              <span class="help-block"></span>
-                              <input type="password" name="repassword" class="form-control" id="" placeholder="re. password">
-                    </div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-6 col-sm-6 col-md-6">
-                    <div class="form-group">
-                      <div class="input-field"> 
-                            <div class="form-group">
-                              <select name="tipodeusuario">
-                                <option value="Profesor">Profesor</option>
-                                <option value="Estudiante">Estudiante</option>
-                              </select>
-                              </div>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-3 text-center"><i class="glyphicon glyphicon-user" style = "font-size: 30px"></i></span>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="username" id="" placeholder="username">
                             </div>
-                    </div>
-                  </div>
-                </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-3 text-center"><i class="glyphicon glyphicon-user" style = "font-size: 30px"></i></span>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="lastname" id="" placeholder="lastname">
+                            </div>
+                        </div>
 
-                <div class="row">
-                  <div class="col-xs-6 col-sm-6 col-md-6">
-                    <div class="form-group">
-                      <div class="input-field"> 
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-3 text-center"><i class="glyphicon glyphicon-envelope" style = "font-size: 30px"></i></span>
+                            <div class="col-md-8">
+                                <input type="text" name="email" class="form-control" id="" placeholder="Email">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-3 text-center"><i class="glyphicon glyphicon-lock" style = "font-size: 30px"></i></span>
+                            <div class="col-md-8">
+                                <input type="password" name="password" class="form-control" id="" placeholder="password">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-3 text-center"><i class="glyphicon glyphicon-lock" style = "font-size: 30px"></i></span>
+                            <div class="col-md-8">
+                                <input type="password" name="repassword" class="form-control" id="" placeholder="re. password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-3 text-center"><i class="glyphicon glyphicon-briefcase" style = "font-size: 30px"></i></span>
+                            <div class="input-field"> 
+                                  <div class="form-group">
+                                    <select name="tipodeusuario">
+                                      <option value="Profesor">Profesor</option>
+                                      <option value="Estudiante">Estudiante</option>
+                                    </select>
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-3 text-center"><i class="glyphicon glyphicon-globe" style = "font-size: 30px"></i></span>
+                            <div class="input-field"> 
                             <div class="form-group">
-                              <label class="right" for="">Pais</label>
                               <select name="country">
                                  <option value="AF">Afganistán</option>
                                   <option value="AL">Albania</option>
@@ -118,21 +127,25 @@
                                   </select>
                               </div>
                             </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                    <div class="form-group">
-                      <button type="submit" class="btn">Crear cuenta</button>
-                    </div>
-                    <div class="form-group">
-                      <button type="submit" class="btn" id="return">Volver a login</button>
-                    </div>
-                </div>
-              </form>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12 text-center">
+                                <div class="form-group">
+                                  
+                                  <button type="submit" id="alerta" class="btn" onclick="EventoAlert()">Crear cuenta</button>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
             </div>
-          </div>
-        </div>
-      </div>
+        </div>    
+      </article>
+     
     </div>
+    </div>
+
+    
+ </body> 
+ 
 </template>

@@ -1,11 +1,16 @@
 <template name="listarCursos">
 	{{>banner}}
-  <div class="wrapper bgded overlay" style="background-image:url('images/demo/cursos2.jpg');" width="17000px" height="700px">
-        <div>
+  <div class="carousel-inner" role="listbox">
+      <div class="wrapper bgded" style="background-image:url('images/demo/ad.jpg');" width="17000px" height="700px">
+      <div id="pageintro" class="hoc clear"> 
+      <div>
             {{#each cursos}}
                   {{> mostrarUnCurso}}          
             {{/each}}
           </div>
+      </div>
+    </div>
+    
   </div>	
 </template>
 <template name="mostrarUnCurso">

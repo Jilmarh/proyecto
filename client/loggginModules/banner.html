@@ -1,13 +1,15 @@
 <template name="banner">
-  <div class="wrapper row1">
+<div class="wrapper row1">
     <header id="header" class="hoc clear">
       <div id="logo" class="fl_left">
       <h1><a href="index.html">Edu .Bloc</a></h1>
         <p>Educacion en linea</p>
+        <br>
       </div>  
     </header>
   </div>
-  <div class="navbar navbar-inverse">
+  <div class="row0">
+    <div class="navbar navbar-inverse">
     <div class="collapse navbar-collapse" id="myNavbar">
       {{#if currentUser}}
           {{#if isInRole 'soporte' 'profesor'}}
@@ -72,4 +74,5 @@
         
     </div>
 </div>
+  </div>
 </template>

@@ -1,32 +1,18 @@
 <template name="banner2">
 	<div class="wrapper row0">
-  <div id="topbar" class="hoc clear"> 
-    <nav id="mainav" class="hoc clear">
-    <ul class="clear">
-        <li class="active"><a href="/">Home</a></li>
+  <div id="topbar" class="hoc clear">
+    <div class="fl_left">
+      <ul class="clear">
+        <li class="active"><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
         <li><a href="">About</a></li>
         <li><a href="">Informacion</a></li>
         <li><a href="/contactanos">contactanos</a></li>
-    </ul>
-  </nav>
-  {{#if currentUser}}
-          <div class="btn-group">
-                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">{{username}}
-                    <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu">
-                      <li><a href="/"><span class="glyphicon glyphicon-user"></span>Perfil</a></li>
-                      <li><a href="#!"><span class="glyphicon glyphicon-envelope"></span>Notificaciones</a></li>
-                      <li><a href="" id="logout"><span class="glyphicon glyphicon-off"></span>Cerrar sesion</a></li>
-                  </ul>
-          </div>
-  {{else}}
-    <a class="btn btn-primary" data-toggle="modal" href='#modal-id'>Login</a>
-  {{/if}}        
+       </ul>
+    </div>
     <div class="fl_right">
       <ul class="nospace">
-        <li><i class="glyphicon glyphicon-earphone"></i> +591 79438307</li>
-        <li><i class="glyphicon glyphicon-envelope"></i> info@domain.com</li>
+        <li class="hidden-xs"><i class="glyphicon glyphicon-log-in"></i> <a class="" data-toggle="modal" href='#modal-id'>Login</a></li>
+        <li><i class="glyphicon glyphicon-edit"></i> <a href="/registerForm">Register</a></li>
       </ul>
     </div>
   </div>

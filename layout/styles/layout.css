@@ -1148,3 +1148,64 @@ a.list-group-item.active small {
   width: 100%;
 }
            
+
+.header {
+    color: #36A0FF;
+    font-size: 27px;
+    padding: 10px;
+}
+
+.bigicon {
+    font-size: 35px;
+    color: #36A0FF;
+}
+
+/*alerta*/
+ul.examples {
+  list-style-type: none;
+  width: 700px;
+  margin: 0 auto;
+  text-align: left;
+  padding-left: 0; }
+  @media all and (max-width: 758px) {
+    ul.examples {
+      width: auto; } }
+  ul.examples li {
+    padding-left: 0; }
+  ul.examples .ui, ul.examples pre {
+    display: inline-block;
+    vertical-align: top; }
+    @media all and (max-width: 758px) {
+      ul.examples .ui, ul.examples pre {
+        display: block;
+        max-width: none;
+        margin: 0 auto; } }
+  ul.examples .ui {
+    width: 300px;
+    text-align: center; }
+    ul.examples .ui button {
+      margin-top: 12px; }
+    ul.examples .ui p {
+      text-align: center;
+      margin-bottom: 0; }
+  ul.examples pre {
+    max-width: 370px;
+    margin-top: 67px; }
+    @media all and (max-width: 758px) {
+      ul.examples pre {
+        margin-top: 16px !important;
+        margin-bottom: 60px; } }
+  ul.examples .warning pre {
+    margin-top: 93px; }
+
+.navbar-inverse {
+	background: #141414;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: inherit;
+}
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #A3D044;
+    background-color: transparent;
+}
