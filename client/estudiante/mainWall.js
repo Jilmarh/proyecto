@@ -1,9 +1,10 @@
 var comments = new ReactiveVar(false);
+
 Template.mainwallform.events({
 	"submit #mainform" : function(e){
       e.preventDefault();
       var message = e.target.message.value
-      ARTICLE.insert({msn:message});
+      ARTICLE.insert({msn:message,edit:false,mediaContent:"none"});
       e.target.message.value = ""
 	}
 });
@@ -22,6 +23,20 @@ Template.ArticlesView.events({
 		
 		//e.preventDefault();
 		comments.set(true);
+	},
+	"click #editBtn": function(e){
+    	e.preventDefault();
+    	ARTICLE.update({_id:this._id},{$set:{edit:true}}); 
+	},
+	"submit #editform":function(e){
+       var msn= e.target.msn.value;
+       ARTICLE.update({_id:this._id},{$set:{edit:false,msn:msn}});
+       return false;
+	},
+		"click #removeBtn": function(e){
+        Meteor.call('remove',this._id,function (error, result){
+        	console.log("borra");
+        });
 	},
 	"click #like_ui": function(e){
 		e.preventDefault();
@@ -44,6 +59,9 @@ Template.mainWallCommentForm.events({
 Template.ArticlesView.helpers({
 	showComments(){
 		return comments.get();
+	},
+	usuario: function(){
+		return Meteor.user();
 	}
 });
 Template.mainWallCommentForm.helpers({

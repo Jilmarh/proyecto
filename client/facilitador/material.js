@@ -4,8 +4,8 @@ Template.material.helpers({
 		algo.push({Titulo:"titulo 1",Descripcion:"descripcion"});
 		return algo;*/
 		//return CURSO.find({},{Titulo:true,Descripcion:true});
-		Meteor.subscribe("getMaterial");
 		//console.log(CURSO.find().fetch());
-		return MATERIAL.find().fetch();
+		Meteor.subscribe("getMaterial", FlowRouter.getParam('idCurso'));
+		return MATERIAL.find();
 	}
 });

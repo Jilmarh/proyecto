@@ -29,14 +29,17 @@ var articlesSchema =new SimpleSchema({
     	}
     },
     mediaContent: {
-    	type:String,
-    	autoValue:function(){
-    		return "";
-    	}
+    	type:String
+    },
+    edit:{
+    	type: Boolean
     }
 });
 
 ARTICLE.allow({
+	update:function(){
+       return true;
+	},
 	insert:function(userId,params){
 		console.log("entra")
         return !!userId;
@@ -158,6 +161,9 @@ var material = new SimpleSchema({
 	},
 	id_US: {
 		type : String
+	},
+	id_Curso:{
+		type: String
 	}
 });
 MATERIAL.attachSchema(material);

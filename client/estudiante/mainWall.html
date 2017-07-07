@@ -49,7 +49,21 @@
 </template>
 <template name="ArticlesView">
   <div class = "panel panel-info">
+   {{#if edit}}
+     <form id="editform" action="" method="POST" class="form-inline" role="form">
+           
+             <div class="form-group">
+               <label class="sr-only" for="">label</label>
+               <textarea name="msn" id="inputMsn" class="form-control" rows="3" required="required">{{msn}}</textarea>
+             </div>
+           
+             
+           
+             <button type="submit" class="btn btn-primary">Editar</button>
+           </form>
+    {{else}}
    <div class = "panel-heading">
+
         <span class="chat-img pull-left">
             <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
         </span>
@@ -57,7 +71,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         </small>
         <div class="header">
-            <strong class="primary-font">luis</strong> 
+            <strong class="primary-font">{{usuario.profile.lastname}} {{usuario.username}}</strong> 
             <small class="pull-right text-muted">
               <span class="glyphicon glyphicon-time"></span>{{date}}
             </small>  
@@ -71,10 +85,13 @@
         <small class="pull-right text-muted">
               <li>
               <a href="" id="like_ui"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>me gusta</a>
-              <a href="/pages/{{_id}}" id="comentBtn"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>comentar</a>
+              <a href="/material/{{_id}}" id="comentBtn"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>comentar</a>
+              <a href="" id="editBtn"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>editar</a>
+              <a href="" id="removeBtn"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>eliminar</a>
             </li>
         </small>
      </div>
+     {{/if}}
   </div>
   <div class = "panel panel-warning">
    <div class = "panel-heading">

@@ -69,9 +69,10 @@ File: Layout CSS
 
 .services{}
 .services article{display:block; padding:30px; border:1px solid;}
-.services article *{margin:0; padding:0;}
+.services article *{margin:1px; padding:0;}
 .services article i{margin-bottom:15px;}
 .services article .heading{margin-bottom:10px;}
+
 
 /* Comments */
 #comments ul{margin:0 0 40px 0; padding:0; list-style:none;}
@@ -1209,3 +1210,12 @@ ul.examples {
     color: #A3D044;
     background-color: transparent;
 }
+
+.articlehover {
+    color: red;
+    background-color: #A3D044;
+    border-color: #A3D044;
+    box-shadow: 5px 5px 0px rgba(0,0,0,.2);
+}
+
+

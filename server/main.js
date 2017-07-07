@@ -25,8 +25,9 @@ Meteor.startup(() => {
 	  return Meteor.users.find();
 	});
 	
-	Meteor.publish("getMaterial",function(){
-		return MATERIAL.find();
+	Meteor.publish("getMaterial",function(idCurso){
+		console.log(idCurso);
+		return MATERIAL.find({id_Curso:idCurso});
 	});
 
 	Meteor.publish("getArchivo",function(){
@@ -67,6 +68,15 @@ Meteor.methods({
 		"addarchivo": function(obj){
 			ARCHIVO.insert(obj);
 			return true;
+		},
+		"remove": function(id){
+            return ARTICLE.remove(id,function(err){
+                if(err){
+                	console.log("Error"+err);
+                    return false;
+                }
+                return true;
+            })
 		},
 		"checkConnection": function(id){
 			// select * from connect where idus=id and stade = true
