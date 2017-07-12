@@ -4,8 +4,11 @@ Template.mostrarUnCurso.events({
 		Meteor.call("deleteCurso",id);
 	}
 });
-Template.listarCursos.helpers({
-	cursos: function () {
+Template.mostrarUnCurso.helpers({
+	imagen() {
+   		 return Images.findOne(this.imgId);
+	},
+    cursos: function () {
 		/*var algo=new Array();
 		algo.push({Titulo:"titulo 1",Descripcion:"descripcion"});
 		return algo;*/
@@ -18,3 +21,5 @@ Template.listarCursos.helpers({
 		return URL.get();
 	}
 });
+Meteor.subscribe('imagen');
+		

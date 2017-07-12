@@ -1,3 +1,11 @@
+Images = new FilesCollection({
+  storagePath: '/home/jhilmar/Escritorio/imagenesOSTRIO',
+  collectionName: 'Images',
+  allowClientCode: false,
+  cacheControl: 'public, max-age=31536000'
+});
+
+
 PERFIL = new Mongo.Collection("perfil");
 
 ARTICLE = new Mongo.Collection("articles",{
@@ -143,6 +151,9 @@ var cursos = new SimpleSchema({
 	},
 	Final : {
 		type : Date
+	},
+	imgId :{
+        type  : String
 	},
 	id_US: {
 		type : String

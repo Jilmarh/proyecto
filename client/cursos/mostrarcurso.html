@@ -1,12 +1,12 @@
-<template name="listarCursos">
-	{{>banner}}
+<template name="mostrarcurso">
+
+{{>banner}}
   <div class="carousel-inner" role="listbox">
       <div class="wrapper bgded" style="background-image:url('images/demo/ad.jpg');" width="17000px" height="700px">
       <div id="pageintro" class="hoc clear"> 
       <div>
-            {{#each cursos}}
                   {{> mostrarUnCurso}}          
-            {{/each}}
+            
           </div>
       </div>
     </div>
@@ -14,6 +14,7 @@
   </div>	
 </template>
 <template name="mostrarUnCurso">
+{{#each cursos}}
 <div class="pull-rigth">
   <div class="offer">
     <div class="" align="center">
@@ -22,7 +23,7 @@
           <a href="#" class="list-group-item active ">
             <div class="media col-md-3">
               <figure class="pull-left">
-                <img class="btmspace-30" src="images/demo/ce.jpg" alt="">
+                <img class="btmspace-30" src="{{imagen.link}}" alt="">
               </figure>
             </div>
               <div class="col-md-6">
@@ -30,15 +31,19 @@
                   <h4 class="list-group-item-heading spacer-10"> {{Titulo}} </h4>
                   <p class="list-group-item-text">{{Descripcion}}</p>
                   <hr> 
-                  
-                    {{#if edit.get}}
-                      <span id="save" class="glyphicon glyphicon-check" aria-hidden="true"></span>
-                    {{else}}
-                    <span id="edit" class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                  {{#if currentUser}}
+                        {{#if isInRole 'soporte' 'profesor'}}     
+
+		                    <span id="remove" class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+		                    <li><a href="/crearmaterial/{{_id}}"><span class="glyphicon glyphicon-home"></span>Crear material</a></li>
+		                    <li><a href="/material/{{_id}}"><span class="glyphicon glyphicon-home"></span>Ver Material</a></li>
+                        {{else}}
+                          		{{#if isInRole 'soporte' 'estudiante'}}
+                            		<li><a class="btn" href="/tomarcurso/{{_id}}"><i class="glyphicon glyphicon-tag"></i>Tomar curso</a></li>
+                         		{{/if}}
+                        {{/if}}
                     {{/if}}
-                    <span id="remove" class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                    <li><a href="/agregarMaterial/{{_id}}"><span class="glyphicon glyphicon-home"></span>Crear material</a></li>
-                    <li><a href="/material/{{_id}}"><span class="glyphicon glyphicon-home"></span>Ver Material</a></li>
+                    
                 </div>
               </div>
             <div class="col-md-3 text-center">                  
@@ -49,13 +54,6 @@
                           <h1>{{Final}}</h1>
                         
                     </div>
-              <div class="stars">
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star-empty"></span>
-              </div>
             </div>
           </a>
         </div>
@@ -64,4 +62,7 @@
   </div>
   
 </div>
+
+
+{{/each}}	
 </template>

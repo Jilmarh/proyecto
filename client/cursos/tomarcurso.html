@@ -1,0 +1,73 @@
+<template name="tomarcurso" >
+	{{>banner}}
+	<div class="row" style="color: black;">
+		<div class="col-md-12" >
+		<br>
+			<div class="col-md-5" >  
+			 <div class="materiales">
+				 {{#if readyCu}}
+					{{#each clases}} 
+	                    <div class="col-md-12" style="width: 400px">
+					              <ul class="nospace group services"  >
+					                <li class="one_third first btmspace-30">
+					                  <article><a href="#"></a>
+					                    <h2>
+					                      {{material}}
+					                    </h2>
+					                    <p>{{DescripcionM}} </p>
+					                  </article>
+					                </li>
+					              </ul>
+					      </div>
+				      {{/each}}
+                 {{/if}}
+			  </div>	        
+             </div>
+			<div class="col-md-7">
+			<div class="well">
+             <form action="#">
+              <textarea style="height: 50px" placeholder="aldito gay" name="" id="input" class="form-control" rows="3" required="required"></textarea>
+              <br>
+              <div style="text-align: center "  >
+              	<button type="button" class="btn btn-default">enviar</button>
+              </div>
+              
+             </form>
+    	 </div>
+    	 <div class="well">
+             <div class = "panel-heading">
+
+			        <span class="chat-img pull-left">
+			            <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
+			        </span>
+			        <small class="pull-right text-muted">
+			              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			        </small>
+			        <div class="header">
+			            <strong class="primary-font">sacar el nombre {{usuario.profile.lastname}} {{usuario.username}}</strong> 
+			            <small class="pull-right text-muted">
+			              <span class="glyphicon glyphicon-time"></span>{{date}}
+			            </small>  
+			        </div>
+			     </div>
+			     
+			     <div class = "panel-body">
+			        <li>
+			          hola
+			        </li>
+			        <small class="pull-right text-muted">
+			              <li>
+			              <a href="" id="like_ui"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>me gusta</a>
+			              <a href="/material/{{_id}}" id="comentBtn"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>comentar</a>
+			              <a href="" id="editBtn"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>editar</a>
+			              <a href="" id="removeBtn"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>eliminar</a>
+			            </li>
+			        </small>
+			     </div>
+    	 </div>
+            </div>
+			
+        </div>
+   </div>
+	
+</template>

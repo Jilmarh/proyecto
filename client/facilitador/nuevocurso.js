@@ -1,6 +1,11 @@
 Template.nuevocurso.events({
 	"submit .form" : function (e) {
 		console.log('invocando submit');
+		var upload = Images.insert({
+					file: e.target.imagen.files[0],
+					streams: 'dynamic',
+					chunkSize: 'dynamic',
+				});
 		e.preventDefault();
 		obj ={
 			//ImagenCurso:e.target.ImagenCurso.value,
@@ -8,6 +13,7 @@ Template.nuevocurso.events({
 			Descripcion:e.target.Descripcion.value,
 			Inicio:e.target.Inicio.value,
 			Final:e.target.Final.value,
+			imgId : upload.config.fileId,
 			id_US:Accounts.user()._id
 		}
 		Meteor.call("addcurso",obj);
@@ -22,6 +28,8 @@ Template.nuevocurso.events({
 	},
 	
 });
+
+
 
 
   

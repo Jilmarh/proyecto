@@ -1,6 +1,27 @@
 import { Meteor } from 'meteor/meteor';
 
 Meteor.startup(() => {
+    if (Meteor.isServer) {
+	  Meteor.publish('imagen', function () {
+	    return Images.find().cursor;
+	  });
+	}
+	
+	Meteor.publishComposite('listmateriales', function(idCurso){
+		return {
+			find(){
+				//console.log(Clases.find({cursId:id}).fetch());
+				return MATERIAL.find({id_Curso:idCurso});
+			},
+			children: [
+				{
+					find(clases){
+						return CURSO.find({_id:clases.idCurso});
+					}
+				}
+			]
+		}
+	});
 	UploadServer.init({
 	    tmpDir: process.env.PWD + '/.tmp',
 	    uploadDir: process.env.PWD + '/.uploads/',

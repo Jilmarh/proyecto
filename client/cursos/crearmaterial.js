@@ -1,4 +1,4 @@
-Template.agregarMaterial.events({
+Template.crearmaterial.events({
 	"submit .form" : function (e) {
 		console.log('invocando submit');
 		e.preventDefault();
@@ -15,7 +15,7 @@ Template.agregarMaterial.events({
 		e.target.material.value="";
 		e.target.DescripcionM.value="";
 		alert("Material Insertado Correctamente");
-		FlowRouter.go('/material/'+FlowRouter.getParam('idCurso'));
+		//FlowRouter.go('/material/'+FlowRouter.getParam('idCurso'));
 		return false;
 
 	},

@@ -11,6 +11,11 @@ File: Layout CSS
 @import url("fontawesome-4.5.0.min.css");
 @import url("framework.css");
 
+
+.materiales article{
+	width: 400px;
+}
+
 /* Rows
 --------------------------------------------------------------------------------------------------------------- */
 .row0{border-top:5px solid;}

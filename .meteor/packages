@@ -35,3 +35,6 @@ raix:handlebar-helpers
 
 tomi:upload-jquery
 tomi:upload-server
+ostrio:files
+reywood:publish-composite
+
