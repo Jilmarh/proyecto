@@ -22,6 +22,38 @@ Meteor.startup(() => {
 			]
 		}
 	});
+	Meteor.publishComposite('listpreguntass', function(idCurso){
+		return {
+			find(){
+				//console.log(Clases.find({cursId:id}).fetch());
+				return PREGUNTAS.find({idCurso:idCurso});
+			},
+			children: [
+				{
+					find(clases){
+						return Meteor.users.find({_id:clases.id_US});
+					}
+				}
+			]
+		}
+	});
+	Meteor.publishComposite('listrespuestas', function(idCurso){
+		return {
+			find(){
+				//console.log(Clases.find({cursId:id}).fetch());
+				return RESPUESTAS.find({idCurso:idCurso});
+			},
+			children: [
+				{
+					find(clases){
+						//console.log(Meteor.users.find({_id:clases.id_US}));
+						return Meteor.users.find({_id:clases.id_US});
+					}
+				}
+			]
+		}
+	});
+
 	UploadServer.init({
 	    tmpDir: process.env.PWD + '/.tmp',
 	    uploadDir: process.env.PWD + '/.uploads/',
@@ -80,6 +112,15 @@ Meteor.methods({
 		},
 		"addcurso": function(obj){
 			CURSO.insert(obj);
+			return true;
+		},
+		"respuesta" : function(obj){
+            RESPUESTAS.insert(obj);
+            return true;
+		}, 
+		"pregu": function(obj){
+			PREGUNTAS.insert(obj);
+			//console.log("saliiiiiii");
 			return true;
 		},
 		"addmaterial": function(obj){

@@ -1,5 +1,5 @@
 Images = new FilesCollection({
-  storagePath: '/home/jhilmar/Escritorio/imagenesOSTRIO',
+  storagePath: '/home/nataly/clonadoMejorado/data',
   collectionName: 'Images',
   allowClientCode: false,
   cacheControl: 'public, max-age=31536000'
@@ -193,6 +193,53 @@ var archivo = new SimpleSchema({
 	}
 });
 ARCHIVO.attachSchema(archivo);
+
+
+PREGUNTAS = new Mongo.Collection("preguntas");
+var preguntas = new SimpleSchema({
+	 texto : {
+	 	type : String
+	 },
+    idCurso : {
+    	type :String
+    },
+    id_US: {
+		type : String
+	},
+	fecha : {
+		type : Date,
+		autoValue : function(){
+			return new Date();
+		}
+	},	 
+    puntaje : {
+    	type : Number
+    }
+});
+PREGUNTAS.attachSchema(preguntas);
+
+RESPUESTAS = new Mongo.Collection("respuestas");
+var respuestas = new SimpleSchema({
+	 texto : {
+	 	type : String
+	 },
+	 id_US: {
+		type : String
+	},
+	id_preg :{
+		type: String
+	},
+    idCurso : {
+    	type :String
+    },
+	fecha : {
+		type : Date,
+		autoValue : function(){
+			return new Date();
+		}
+	}
+});
+RESPUESTAS.attachSchema(respuestas);
 
 //POSTS=new Mongo.Collection("news");
 
