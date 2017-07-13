@@ -77,10 +77,28 @@ Meteor.startup(() => {
 	  
 	  return Meteor.users.find();
 	});
+	/***********publicacion de los materiales con chat***********/
 	
-	Meteor.publish("getMaterial",function(idCurso){
-		console.log(idCurso);
-		return MATERIAL.find({id_Curso:idCurso});
+	publishComposite("getMaterial",function(idCurso){
+		return {
+			find(){
+				return MATERIAL.find({id_Curso:idCurso});		
+			},
+			children:[
+			{
+				find(material){
+					return CHAT.find({idMaterial:material._id});
+				},
+				children:[
+				{
+					find(chat, material){
+						return Meteor.users.find({_id : chat.idUsuario});
+					}
+				}
+				]
+			}
+			]
+		}
 	});
 
 	Meteor.publish("getArchivo",function(){
@@ -162,6 +180,11 @@ Meteor.methods({
 			LIKES.insert(obj);
 			return true;
 		},
+		/*******insertar chat*************/
+		'insertarChat': function(mensaje){
+			CHAT.insert(mensaje);
+		},
+
 		"updateperfil":function(id,obj){
 			//console.log(id);	
 

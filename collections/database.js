@@ -1,5 +1,5 @@
 Images = new FilesCollection({
-  storagePath: '/home/nataly/clonadoMejorado/data',
+  storagePath: '/home/jhilmar/Escritorio/imagenesOSTRIO',
   collectionName: 'Images',
   allowClientCode: false,
   cacheControl: 'public, max-age=31536000'
@@ -108,11 +108,11 @@ LIKES.attachSchema(likesSchema);
 CHAT = new  Mongo.Collection("chat");
 CONNECT = new Mongo.Collection("connect");
 var chatSchema = new SimpleSchema({
-	idSource: {
-		type:String
+	idUsuario: {
+		type: String
 	},
-	idDestination: {
-		type:String
+	idMaterial:{
+		type: String
 	},
 	date: {
 		type:Date

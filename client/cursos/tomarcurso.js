@@ -92,3 +92,26 @@ Template.comentarios.events({
 	return false;
 	}
 });
+/**********events y helpers del chat *****/
+Template.chat.events({
+    'submit .mensajeChat': function (e) {
+        e.preventDefault();
+        var mensaje = {
+            idUsuario : Meteor.userId(),
+            idMaterial : this._id,
+            date: new Date(),
+            message: e.target.mensaje.value,
+        };
+        Meteor.call('insertarChat', mensaje);
+        e.target.mensaje.value = '';
+    }
+});
+Template.chat.helpers({
+    mensajes: function(){
+        return CHAT.find({idMaterial : this._id});
+    },
+    autorMensaje: function(){
+        return Meteor.users.findOne({_id:this.idUsuario});
+    }
+
+});
