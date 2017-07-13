@@ -1223,4 +1223,38 @@ ul.examples {
     box-shadow: 5px 5px 0px rgba(0,0,0,.2);
 }
 
+/*-----------------------------*/
+
+
+.panelStyles{
+	width: 45%;
+	height: 50%;
+	margin-right: 20%;
+	margin-top: 5%;
+	background-color:##afeeee;
+	border-radius: 50px 0px 50px 0px;
+	
+}
+#fer{
+	background-color: #A3D044;
+	background: linear-gradient(top, #68b12f, #50911e);
+	border: 1px solid #A3D044;
+	opacity:0.9;
+	border-radius: 50px 0px 0px 0px;
+}
+.panel-body{
+	border-radius: 0px 0px 50px 0px;
+}
+
+.circular { width: 200px; height: 150px; 
+			border: 3px solid grey;
+			margin: 0;
+			padding: 0;
+			border-radius: 800px;
+			overflow: hidden;
+	 }
+
+
+
+
 

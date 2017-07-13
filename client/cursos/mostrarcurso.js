@@ -19,7 +19,10 @@ Template.mostrarUnCurso.helpers({
 	},
 	URL(){
 		return URL.get();
-	}
+	},
+	nombre(){
+    	return Meteor.user();
+    }
 });
 Meteor.subscribe('imagen');
 		

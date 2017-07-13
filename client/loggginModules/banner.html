@@ -30,8 +30,20 @@
         <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                          <span class="glyphicon glyphicon-user"></span> 
-                          <strong>{{username}}</strong>
+                           
+                          {{#if currentUser}}
+                              {{#if isInRole 'soporte' 'profesor'}}
+                                  <strong> FACILITADOR <br><span class="glyphicon glyphicon-user"></span>{{nombre.username}} {{nombre.profile.lastname}}</strong>
+                              {{else}}
+                                  {{#if isInRole 'soporte' 'estudiante'}}
+                                      <strong> ESTUDIANTE <br><span class="glyphicon glyphicon-user"></span>{{nombre.username}} {{nombre.profile.lastname}}</strong>
+                                  {{else}}
+                                      {{#if isInRole 'soporte' 'administrador'}}
+                                           <strong>ADMINISTRADOR <br><span class="glyphicon glyphicon-user">{{nombre.username}} {{nombre.profile.lastname}}</span></strong>
+                                      {{/if}}
+                                  {{/if}}
+                              {{/if}}
+                          {{/if}}
                           <span class="glyphicon glyphicon-chevron-down"></span>
                       </a>
                       <ul class="dropdown-menu">
@@ -44,8 +56,8 @@
                                           </p>
                                       </div>
                                       <div class="col-lg-8">
-                                          <p class="text-left"><strong>{{username}}</strong></p>
-                                          <p class="text-left small">correoElectronico@email.com</p>
+                                          <p class="text-left"><strong>{{nombre.username}} {{nombre.profile.lastname}}</strong></p>
+                                          <p class="text-left small">{{nombre.emails.[0].address}}</p>
                                           <p class="text-left">
                                           </p>
                                       </div>

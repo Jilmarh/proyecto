@@ -1,11 +1,11 @@
 <template name="perfil">
 	{{>banner}}
   <div class="carousel-inner" role="listbox">
-      <div class="wrapper bgded" style="background-image:url('images/demo/ad.jpg');" width="17000px" height="700px">
+      <div class="wrapper bgded overlay" style="background-image:url('images/demo/fondo.jpg');" width="17000px" height="700px">
       <div id="pageintro" class="hoc clear"> 
         <div id="myTabContent" class="tab-content">
                                         <div class="tab-pane active in" id="login">
-                                                <table id="tablaprofile" class="table">
+                                                <table id="tablaprofile" class="table" style="color: black">
                                                     <tbody>
                                                         
                                                         <tr><strong>Nombre :</strong>   {{username}}</tr>
@@ -17,7 +17,7 @@
                                             <div id="BotonEditar">
                                                 <button type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"><strong>Editar</strong></button> 
                                             </div>
-                                            <div id="myModal" class="modal fade" role="dialog">
+                                            <div id="myModal" class="modal fade" role="dialog" style="color: black">
                                                 <div class="modal-dialog">
 
                                            
