@@ -1,6 +1,6 @@
 <template name="tomarcurso" >
 	{{>banner}}
-	<div class="wrapper bgded overlay" style="background-image:url('images/demo/fondo.jpg');" width="17000px" height="700px">
+	<div class="wrapper bgded overlay" style="background-image:url('/images/demo/fondo.jpg');" width="17000px" height="700px">
       	<div class="row" style="color: black;">
 				<div class="col-md-12" >
 				<br>
@@ -16,8 +16,17 @@
 				                      {{material}}
 				                    </h2>
 				                    <p>{{DescripcionM}} </p>
-				                    <a href="#" id="addClass"><span class="glyphicon glyphicon-comment"></span>chat</a>
-				                    <a href=""><span class="glyphicon glyphicon-upload"></span>Archivos del curso</a>
+				                    {{#if currentUser}}
+								          {{#if isInRole 'soporte' 'profesor'}}
+								              <a href="#" id="addClass"><span class="glyphicon glyphicon-comment"></span>chat</a>
+				                    			<a href=""><span class="glyphicon glyphicon-upload"></span> Subir archivos</a>
+								          {{else}}
+								              {{#if isInRole 'soporte' 'estudiante'}}
+								                  <a href="#" id="addClass"><span class="glyphicon glyphicon-comment"></span>chat</a>
+				                    				<a href=""><span class="glyphicon glyphicon-upload"></span>Archivos del curso</a>
+								              {{/if}}
+								          {{/if}}
+								      {{/if}}
 				                  </article>
 				                </li>
 				              </ul>
@@ -30,7 +39,7 @@
 					<div class="col-md-7">
 					<div class="well">
 		             <form action=""  method="POST" role="form" id="forpreg">
-		              <textarea style="height: 50px" placeholder="aldito gay" name="preguntassss" id="preguntassss" class="form-control" rows="3" required="required"></textarea>
+		              <textarea style="height: 50px" placeholder="escribe tu pregunta" name="preguntassss" id="preguntassss" class="form-control" rows="3" required="required"></textarea>
 		              <br>
 		              <div style="text-align: center "  >
 		              	<button type="submit" id="pregu" class="btn btn-default" style="height: 10px">enviar</button>
@@ -52,12 +61,12 @@
 				    	 			</div>
 				    	 			<div class="col-md-10">
 				    	 				<small class="pull-right text-muted">
-									              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 									        </small>
 									        <div class="header">
 									            <strong class="primary-font">{{preguntacurso.username}} {{preguntacurso.profile.lastname}} </strong> 
 									            <small class="pull-right text-muted">
 									              <span class="glyphicon glyphicon-time"></span>{{fecha}}
+									              <a href=""><span id="removee" class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
 									            </small> 
 									             <br>
 										        <li style="color: black">

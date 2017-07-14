@@ -14,10 +14,12 @@ Template.crearmaterial.events({
 		//e.target.ImagenCurso.value="";
 		e.target.material.value="";
 		e.target.DescripcionM.value="";
-		alert("Material Insertado Correctamente");
 		//FlowRouter.go('/material/'+FlowRouter.getParam('idCurso'));
 		return false;
 
 	},
+  "click #alerta3" : function EventoAlert(){
+    swal("Material Insertado", "correctamente !", "success");
+  }
 	
 });

@@ -1,6 +1,10 @@
 <template name="nuevocurso">
     {{>banner}}
-      <div class="wrapper bgded overlay" style="background-image:url('images/demo/fondo.jpg');" width="17000px" height="700px">
+    <head>
+      <script src="dist/sweetalert-dev.js"></script>
+      <link rel="stylesheet" href="dist/sweetalert.css">
+    </head>
+      <div class="wrapper bgded overlay" style="background-image:url('/images/demo/fondo.jpg');" width="17000px" height="700px">
           <div class="hoc clear"> 
                 <div class="panel panelStyles">
                   <div class="panel-heading" id="fer">
@@ -33,7 +37,8 @@
                       <input type="date" class="form-control" id="" placeholder="" name="Final">
                     </div>
                     <div align="center">
-                      <button type="submit" class="btn btn-default">Enviar Curso</button>
+                      <button type="submit" id="alerta2" class="btn" onclick="EventoAlert()">Enviar Curso</button>
+                      
                     </div>
                     </form>
                   </div>

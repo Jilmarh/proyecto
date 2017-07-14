@@ -108,6 +108,10 @@ Meteor.startup(() => {
   // code to run on server at startup
 
 Meteor.methods({
+		"deleteMaterial": function(msnObj){
+			MATERIAL.remove(msnObj);
+			return true;
+		},
 		"deleteCurso": function(msnObj){
 			CURSO.remove(msnObj);
 			return true;

@@ -22,10 +22,12 @@ Template.nuevocurso.events({
 		e.target.Descripcion.value="";
 		e.target.Inicio.value="";
 		e.target.Final.value="";
-		alert("Curso Insertado Correctamente");
 		return false;
 
 	},
+  "click #alerta2" : function EventoAlert(){
+    swal("Curso Insertado", "correctamente !", "success");
+  }
 	
 });
 

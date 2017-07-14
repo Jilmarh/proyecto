@@ -81,6 +81,10 @@ Template.tomarcurso.events({
     },
     "click #removeClass" : function(){
         $('#qnimate').removeClass('popup-box-on');
+    },
+    "click #removee":function(e){
+        id=this._id;
+        Meteor.call("deleteMaterial",id);
     }
     
 });
