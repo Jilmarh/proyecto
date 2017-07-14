@@ -1,5 +1,5 @@
 Images = new FilesCollection({
-  storagePath: '/home/jhilmar/Escritorio/imagenesOSTRIO',
+  storagePath: '/home/nataly/clonadoHH/imagenesOSTRIO',
   collectionName: 'Images',
   allowClientCode: false,
   cacheControl: 'public, max-age=31536000'

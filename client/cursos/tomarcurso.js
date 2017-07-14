@@ -1,3 +1,4 @@
+
 resp= new ReactiveVar();
 
 Template.tomarcurso.helpers({	
@@ -46,6 +47,9 @@ Template.tomarcurso.helpers({
     },
     nombre(){
     	return Meteor.user();
+    },
+    datos(){
+        return Meteor.user();
     }
 })
 Template.tomarcurso.events({
@@ -71,7 +75,14 @@ Template.tomarcurso.events({
         Meteor.call('pregu',obj);
         element="";
         return false;
-	}
+	},
+    "click #addClass" : function () {
+          $('#qnimate').addClass('popup-box-on');
+    },
+    "click #removeClass" : function(){
+        $('#qnimate').removeClass('popup-box-on');
+    }
+    
 });
 
 Template.comentarios.events({
@@ -115,3 +126,5 @@ Template.chat.helpers({
     }
 
 });
+
+
